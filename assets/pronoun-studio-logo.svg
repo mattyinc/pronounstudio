@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-labelledby="title">
+  <title id="title">Pronoun Studio logo</title>
+  <defs>
+    <linearGradient id="pink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff4b91"/>
+      <stop offset="1" stop-color="#ec2147"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8847ff"/>
+      <stop offset="1" stop-color="#5b34e8"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#11a8ff"/>
+      <stop offset="1" stop-color="#007aff"/>
+    </linearGradient>
+  </defs>
+  <circle cx="48" cy="35" r="15" fill="url(#pink)"/>
+  <circle cx="80" cy="26" r="18" fill="url(#purple)"/>
+  <circle cx="112" cy="35" r="15" fill="url(#blue)"/>
+  <path d="M18 101c0-25 18-48 45-48 27 0 45 23 45 48 0 3-2 5-5 4-29-9-51-9-80 0-3 1-5-1-5-4Z" fill="url(#pink)"/>
+  <path d="M52 101c0-31 17-58 48-58s48 27 48 58c0 4-3 6-7 5-27-9-55-9-82 0-4 1-7-1-7-5Z" fill="url(#purple)" opacity=".95"/>
+  <path d="M92 101c0-25 18-48 45-48 27 0 45 23 45 48 0 3-2 5-5 4-29-9-51-9-80 0-3 1-5-1-5-4Z" fill="url(#blue)"/>
+</svg>

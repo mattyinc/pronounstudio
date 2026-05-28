@@ -147,15 +147,10 @@ a {
 }
 
 .brand-mark {
-  display: grid;
-  place-items: center;
-  width: 34px;
+  width: 46px;
   height: 34px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--yellow), var(--orange));
-  color: #171717;
-  font-size: 12px;
-  font-weight: 700;
+  display: block;
+  object-fit: contain;
 }
 
 .desktop-links {
