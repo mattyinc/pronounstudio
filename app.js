@@ -1548,6 +1548,7 @@ function applyCourseLanguage() {
   if (label) label.textContent = courseLanguages[language]?.label || "Language";
   if (flag) flag.textContent = languageFlags[language] || languageFlags.en;
   document.documentElement.lang = language === "en" ? "en" : language;
+  document.body.dataset.courseLanguage = language;
   localStorage.setItem("courseLanguage", language);
   translateStaticCopy(copy);
 }

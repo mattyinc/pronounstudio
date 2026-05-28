@@ -54,6 +54,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Benaiah";
+  src: url("assets/fonts/Benaiah.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HH Lemd Mono";
+  src: url("assets/fonts/HHLemdMono-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 body[data-theme="dark"] {
   color-scheme: dark;
@@ -103,6 +119,11 @@ body {
   color: var(--text);
   font-family: var(--body-font);
   letter-spacing: 0;
+}
+
+body[data-course-language="am"] {
+  --display-font: "Benaiah", Georgia, serif;
+  --body-font: "HH Lemd Mono", Inter, system-ui, sans-serif;
 }
 
 body[data-theme="dark"] {
