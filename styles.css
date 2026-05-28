@@ -246,14 +246,30 @@ a {
   min-height: 38px;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  border: 1px solid var(--line);
+  gap: 7px;
+  border: 1px solid color-mix(in srgb, var(--teal) 20%, var(--line));
   border-radius: 999px;
-  background: color-mix(in srgb, var(--surface) 88%, transparent);
-  padding: 0 9px 0 13px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--teal-soft) 48%, transparent), transparent 64%),
+    var(--surface);
+  padding: 4px 8px 4px 5px;
+  box-shadow: 0 12px 28px rgba(33, 44, 40, 0.07);
 }
 
-.language-control span {
+.language-flag {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--line) 68%, transparent);
+  border-radius: 50%;
+  background: var(--surface);
+  font-size: 17px;
+  line-height: 1;
+}
+
+.language-label {
   color: var(--soft);
   font-size: 11px;
   font-weight: 700;
@@ -262,13 +278,16 @@ a {
 }
 
 .language-control select {
-  min-width: 112px;
+  min-width: 92px;
   border: 0;
   background: transparent;
   color: var(--ink);
   font: inherit;
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 600;
   outline: 0;
+  appearance: none;
+  cursor: pointer;
 }
 
 .auth-status {
@@ -1801,12 +1820,18 @@ h1 {
     padding: 0 8px;
   }
 
-  .language-control span {
+  .language-label {
     display: none;
   }
 
+  .language-flag {
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+  }
+
   .language-control select {
-    min-width: 62px;
+    min-width: 56px;
     font-size: 12px;
   }
 

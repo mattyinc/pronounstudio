@@ -1178,6 +1178,86 @@ const examTopics = {
 const questionTypes = ["MCQ", "Spanish to English", "English to Spanish", "Correct the Error", "Fill in the Blank"];
 const genericDistractors = ["Lo veo.", "Le mandé un mensaje.", "Se lo dije.", "Me levanto temprano.", "Te lo voy a mandar.", "Quiero que lo hagas."];
 const courseLanguages = window.courseLanguages || { en: { name: "English", label: "Language" } };
+const languageFlags = { en: "🇺🇸", hi: "🇮🇳", ta: "🇮🇳", bn: "🇧🇩", am: "🇪🇹" };
+const staticCopy = {
+  en: {
+    lessons: "Lessons",
+    exams: "Exams",
+    startLearning: "Start learning",
+    openLessons: "Open lessons",
+    chooseExam: "Choose an exam",
+    reviewLessons: "Review lessons",
+    goToExams: "Go to exams",
+    reset: "Reset",
+    signOut: "Sign out",
+    homeHeroKicker: "Mexican Spanish Grammar",
+    homeHeroTitle: "Understand pronouns without the noise.",
+    homeHeroText: "A spacious learning studio with deep lessons, focused examples, checkpoints, and level-based exams.",
+    lessonTopics: "lesson topics",
+    mastery: "mastery",
+    lessonsCard: "Lessons page",
+    lessonsCardText: "Study pronouns first, then connectors, adjectives, time, and tense modules with examples and checkpoints.",
+    examsCard: "Exams page",
+    examsCardText: "Select a topic and level, then work through mixed question types built for mastery.",
+    progressCard: "Progress memory",
+    progressCardText: "Your streak, attempts, theme, and selected exam persist locally as you move between pages.",
+    saveKicker: "Progress saving",
+    saveTitle: "Learn freely. Sign in only when you want cloud progress.",
+    saveText: "You can use every lesson and exam without an account. Sign in with Google if you want your streak, exam level, theme, and progress saved across devices.",
+    lessonsHeroKicker: "Lessons",
+    lessonsHeroTitle: "Study one section at a time.",
+    lessonsHeroText: "Choose a topic, read deeply, check the examples, and use the checkpoints before moving to exams.",
+    pronounsGroup: "Pronouns",
+    coreGroup: "Core Spanish",
+    localKicker: "Local mode",
+    localTitle: "Your lessons work now.",
+    localText: "Sign in with Google when you want progress saved to the cloud. Without sign-in, this browser keeps progress locally.",
+    examHeroKicker: "Exam studio",
+    examHeroTitle: "Choose the exam you want to take.",
+    examHeroText: "Every topic has five levels and each level contains at least forty mixed questions.",
+    cloudKicker: "Cloud progress",
+    cloudTitle: "Want your scores saved?",
+    cloudText: "Exams work without login, but your cloud streak and progress only sync after signing in with Google.",
+    progress: "Progress",
+    practiceTitle: "Practice until it feels automatic.",
+    topic: "Topic",
+    level: "Level",
+    startExam: "Start exam",
+    nextQuestion: "Next question",
+  },
+  hi: {
+    lessons: "पाठ", exams: "परीक्षा", startLearning: "सीखना शुरू करें", openLessons: "पाठ खोलें", chooseExam: "परीक्षा चुनें", reviewLessons: "पाठ दोहराएँ", goToExams: "परीक्षा पर जाएँ", reset: "रीसेट", signOut: "साइन आउट",
+    homeHeroKicker: "Mexican Spanish व्याकरण", homeHeroTitle: "Pronouns को बिना शोर के समझें।", homeHeroText: "गहरे पाठ, साफ examples, checkpoints और level-based exams वाला शांत learning studio.",
+    lessonTopics: "पाठ विषय", mastery: "mastery", lessonsCard: "पाठ पेज", lessonsCardText: "पहले pronouns, फिर connectors, adjectives, time और tenses examples/checkpoints के साथ पढ़ें।", examsCard: "परीक्षा पेज", examsCardText: "Topic और level चुनें, फिर mastery के लिए mixed questions करें।", progressCard: "Progress memory", progressCardText: "आपका streak, attempts, theme और selected exam pages के बीच save रहता है।",
+    saveKicker: "Progress saving", saveTitle: "मुफ़्त सीखें। Cloud progress चाहिए तभी sign in करें।", saveText: "Account के बिना हर पाठ और exam काम करता है। Google से sign in करने पर progress devices पर save होगी।",
+    lessonsHeroKicker: "पाठ", lessonsHeroTitle: "एक समय में एक section पढ़ें।", lessonsHeroText: "Topic चुनें, गहराई से पढ़ें, examples देखें, फिर exam से पहले checkpoints करें।", pronounsGroup: "Pronouns", coreGroup: "Core Spanish", localKicker: "Local mode", localTitle: "आप अभी पढ़ सकते हैं।", localText: "Cloud save चाहिए तो Google से sign in करें। बिना sign-in यह browser progress locally रखता है।",
+    examHeroKicker: "Exam studio", examHeroTitle: "अपनी परीक्षा चुनें।", examHeroText: "हर topic में 5 levels हैं और हर level में कम से कम 40 mixed questions हैं।", cloudKicker: "Cloud progress", cloudTitle: "Scores save करने हैं?", cloudText: "Exams बिना login चलते हैं, लेकिन cloud streak/progress Google sign-in के बाद sync होती है।", progress: "Progress", practiceTitle: "Practice करें जब तक automatic लगे।", topic: "Topic", level: "Level", startExam: "Exam शुरू करें", nextQuestion: "अगला question",
+  },
+  ta: {
+    lessons: "பாடங்கள்", exams: "தேர்வுகள்", startLearning: "கற்க தொடங்கு", openLessons: "பாடங்களைத் திற", chooseExam: "தேர்வு தேர்வு செய்", reviewLessons: "பாடம் மீள்பார்", goToExams: "தேர்வுகளுக்கு செல்", reset: "Reset", signOut: "Sign out",
+    homeHeroKicker: "Mexican Spanish இலக்கணம்", homeHeroTitle: "Pronouns-ஐ அமைதியாகப் புரிந்துகொள்ளுங்கள்.", homeHeroText: "ஆழமான பாடங்கள், தெளிவான examples, checkpoints, level-based exams கொண்ட spacious studio.",
+    lessonTopics: "பாட தலைப்புகள்", mastery: "mastery", lessonsCard: "பாடப் பக்கம்", lessonsCardText: "Pronouns முதலில்; பிறகு connectors, adjectives, time, tenses examples/checkpoints உடன்.", examsCard: "தேர்வு பக்கம்", examsCardText: "Topic மற்றும் level தேர்வு செய்து mixed questions மூலம் mastery பெறுங்கள்.", progressCard: "Progress memory", progressCardText: "Streak, attempts, theme, selected exam pages இடையே சேமிக்கப்படும்.",
+    saveKicker: "Progress saving", saveTitle: "சுதந்திரமாக கற்றுக்கொள்ளுங்கள். Cloud progress வேண்டுமென்றால் மட்டும் sign in.", saveText: "Account இல்லாமலும் எல்லா lessons/exams இயங்கும். Google sign-in செய்தால் progress devices-ல் save ஆகும்.",
+    lessonsHeroKicker: "பாடங்கள்", lessonsHeroTitle: "ஒரு நேரத்தில் ஒரு section.", lessonsHeroText: "Topic தேர்வு செய்து ஆழமாகப் படியுங்கள்; examples/checkpoints முடித்து exams செல்லுங்கள்.", pronounsGroup: "Pronouns", coreGroup: "Core Spanish", localKicker: "Local mode", localTitle: "இப்போது பாடங்கள் வேலை செய்கின்றன.", localText: "Cloud save வேண்டுமென்றால் Google sign in. இல்லையெனில் browser local progress வைத்திருக்கும்.",
+    examHeroKicker: "Exam studio", examHeroTitle: "எந்த exam வேண்டுமோ தேர்வு செய்யுங்கள்.", examHeroText: "ஒவ்வொரு topic-க்கும் 5 levels; ஒவ்வொரு level-லும் குறைந்தது 40 mixed questions.", cloudKicker: "Cloud progress", cloudTitle: "Scores save வேண்டுமா?", cloudText: "Login இல்லாமல் exams இயங்கும்; cloud sync Google sign-in பிறகு மட்டும்.", progress: "Progress", practiceTitle: "Automatic ஆகும் வரை practice.", topic: "Topic", level: "Level", startExam: "Exam தொடங்கு", nextQuestion: "அடுத்த question",
+  },
+  bn: {
+    lessons: "পাঠ", exams: "পরীক্ষা", startLearning: "শেখা শুরু করুন", openLessons: "পাঠ খুলুন", chooseExam: "পরীক্ষা বাছুন", reviewLessons: "পাঠ দেখুন", goToExams: "পরীক্ষায় যান", reset: "Reset", signOut: "Sign out",
+    homeHeroKicker: "Mexican Spanish Grammar", homeHeroTitle: "Pronouns সহজভাবে বুঝুন।", homeHeroText: "গভীর lessons, পরিষ্কার examples, checkpoints এবং level-based exams সহ একটি শান্ত learning studio.",
+    lessonTopics: "lesson topics", mastery: "mastery", lessonsCard: "Lessons page", lessonsCardText: "প্রথমে pronouns, তারপর connectors, adjectives, time, tenses examples/checkpoints সহ পড়ুন।", examsCard: "Exams page", examsCardText: "Topic ও level বেছে mixed questions দিয়ে mastery তৈরি করুন।", progressCard: "Progress memory", progressCardText: "Streak, attempts, theme এবং selected exam pages-এর মধ্যে save থাকে।",
+    saveKicker: "Progress saving", saveTitle: "স্বাধীনভাবে শিখুন। Cloud progress চাইলে sign in করুন।", saveText: "Account ছাড়াও সব lesson/exam চলে। Google sign-in করলে progress devices-এ save হবে।",
+    lessonsHeroKicker: "পাঠ", lessonsHeroTitle: "একবারে একটি section পড়ুন।", lessonsHeroText: "Topic বেছে গভীরভাবে পড়ুন, examples দেখুন, checkpoints করে exams-এ যান।", pronounsGroup: "Pronouns", coreGroup: "Core Spanish", localKicker: "Local mode", localTitle: "আপনি এখনই শিখতে পারেন।", localText: "Cloud save চাইলে Google sign in করুন। না হলে এই browser progress রাখবে।",
+    examHeroKicker: "Exam studio", examHeroTitle: "আপনি যে exam নিতে চান সেটি বেছে নিন।", examHeroText: "প্রতিটি topic-এ 5 levels এবং প্রতিটি level-এ অন্তত 40 mixed questions আছে।", cloudKicker: "Cloud progress", cloudTitle: "Scores save করতে চান?", cloudText: "Login ছাড়াই exams চলে, কিন্তু cloud progress Google sign-in-এর পর sync হয়।", progress: "Progress", practiceTitle: "Automatic লাগা পর্যন্ত practice করুন।", topic: "Topic", level: "Level", startExam: "Exam শুরু করুন", nextQuestion: "পরের question",
+  },
+  am: {
+    lessons: "ትምህርቶች", exams: "ፈተናዎች", startLearning: "መማር ጀምር", openLessons: "ትምህርቶችን ክፈት", chooseExam: "ፈተና ምረጥ", reviewLessons: "ትምህርት ክለሳ", goToExams: "ወደ ፈተና", reset: "Reset", signOut: "Sign out",
+    homeHeroKicker: "Mexican Spanish Grammar", homeHeroTitle: "Pronounsን በግልጽ መንገድ ይረዱ።", homeHeroText: "ጥልቅ lessons, examples, checkpoints እና level-based exams ያለው ሰፊ learning studio.",
+    lessonTopics: "lesson topics", mastery: "mastery", lessonsCard: "Lessons page", lessonsCardText: "Pronouns መጀመሪያ፣ ከዚያ connectors, adjectives, time, tenses ከexamples/checkpoints ጋር።", examsCard: "Exams page", examsCardText: "Topic እና level ይምረጡ፣ mixed questions ይለማመዱ።", progressCard: "Progress memory", progressCardText: "Streak, attempts, theme, selected exam በpages መካከል save ይሆናሉ።",
+    saveKicker: "Progress saving", saveTitle: "በነፃ ይማሩ። Cloud progress ሲፈልጉ ብቻ sign in.", saveText: "Account ያለምንም lessons/exams ይሰራሉ። Google sign-in ካደረጉ progress በdevices ይsave ሆናል።",
+    lessonsHeroKicker: "ትምህርቶች", lessonsHeroTitle: "አንድ section በአንድ ጊዜ ይማሩ።", lessonsHeroText: "Topic ይምረጡ፣ በጥልቅ ያንብቡ፣ examples/checkpoints ከዚያ exams.", pronounsGroup: "Pronouns", coreGroup: "Core Spanish", localKicker: "Local mode", localTitle: "አሁን መማር ይችላሉ።", localText: "Cloud save ከፈለጉ Google sign in. ካልሆነ browser progress locally ይይዛል።",
+    examHeroKicker: "Exam studio", examHeroTitle: "የሚፈልጉትን exam ይምረጡ።", examHeroText: "እያንዳንዱ topic 5 levels አለው፣ በlevel ውስጥ ቢያንስ 40 mixed questions.", cloudKicker: "Cloud progress", cloudTitle: "Scores save ይፈልጋሉ?", cloudText: "Exams ያለ login ይሰራሉ፣ cloud sync ግን Google sign-in በኋላ.", progress: "Progress", practiceTitle: "Automatic እስኪሆን ድረስ practice.", topic: "Topic", level: "Level", startExam: "Exam ጀምር", nextQuestion: "ቀጣይ question",
+  },
+};
 const SUPABASE_URL = "https://byjxdmeousrepzjtgxvm.supabase.co";
 const SUPABASE_KEY = "sb_publishable_NIK7EwHsv-YeizMoiurj_g_Pn3pvQ-g";
 const supabaseClient = window.supabase?.createClient(SUPABASE_URL, SUPABASE_KEY);
@@ -1367,17 +1447,19 @@ function applyProgressSnapshot(progress) {
 function renderAuth() {
   if (!els.signInBtn || !els.signOutBtn || !els.authStatus) return;
   const isSignedIn = Boolean(currentUser);
+  const copy = staticCopy[getCourseLanguage()] || staticCopy.en;
   els.signInBtn.classList.toggle("hidden", isSignedIn);
   els.signOutBtn.classList.toggle("hidden", !isSignedIn);
   els.authStatus.textContent = isSignedIn ? "Cloud sync on" : "Local progress only";
   els.authStatus.title = isSignedIn ? currentUser.email || "Signed in" : "Sign in to save progress across devices";
+  const localNotice = els.topicTitle ? copy.localText : els.answerOptions ? copy.cloudText : copy.saveText;
   els.authNotices.forEach((notice) => {
     notice.classList.toggle("signed-in", isSignedIn);
     const body = notice.querySelector(":scope > p");
     if (body) {
       body.textContent = isSignedIn
         ? "Cloud sync is active. Your streak, exam level, theme, and progress will be saved to your account."
-        : "You can use every lesson and exam without an account. Sign in with Google if you want your streak, exam level, theme, and progress saved across devices.";
+        : localNotice;
     }
   });
 }
@@ -1456,12 +1538,86 @@ function getCourseLanguage() {
 
 function applyCourseLanguage() {
   const language = getCourseLanguage();
+  const copy = staticCopy[language] || staticCopy.en;
   state.courseLanguage = language;
   if (els.courseLanguage) els.courseLanguage.value = language;
-  const label = els.courseLanguage?.closest(".language-control")?.querySelector("span");
+  const control = els.courseLanguage?.closest(".language-control");
+  const label = control?.querySelector(".language-label");
+  const flag = control?.querySelector("[data-language-flag]");
   if (label) label.textContent = courseLanguages[language]?.label || "Language";
+  if (flag) flag.textContent = languageFlags[language] || languageFlags.en;
   document.documentElement.lang = language === "en" ? "en" : language;
   localStorage.setItem("courseLanguage", language);
+  translateStaticCopy(copy);
+}
+
+function setText(selector, value, index = 0) {
+  const nodes = document.querySelectorAll(selector);
+  const node = nodes[index];
+  if (node && value) node.textContent = value;
+}
+
+function setLeadingText(selector, value, index = 0) {
+  const nodes = document.querySelectorAll(selector);
+  const node = nodes[index];
+  if (!node || !value) return;
+  const textNode = [...node.childNodes].find((child) => child.nodeType === Node.TEXT_NODE && child.textContent.trim());
+  if (textNode) textNode.textContent = `\n              ${value}\n              `;
+}
+
+function translateStaticCopy(copy) {
+  document.querySelectorAll(".desktop-links a[href='lessons.html']").forEach((node) => (node.textContent = copy.lessons));
+  document.querySelectorAll(".desktop-links a[href='exams.html']").forEach((node) => (node.textContent = copy.exams));
+  setText("#resetProgress", copy.reset);
+  setText("#signOutBtn", copy.signOut);
+  setText(".top-nav .primary-link", copy.startLearning);
+  setText(".top-nav .secondary-link[href='exams.html']", copy.goToExams);
+  setText(".top-nav .secondary-link[href='lessons.html']", copy.reviewLessons);
+
+  if (document.querySelector(".hero")) {
+    setText(".hero .eyebrow", copy.homeHeroKicker);
+    setText(".hero h1", copy.homeHeroTitle);
+    setText(".hero .hero-text", copy.homeHeroText);
+    setText(".hero-actions .primary-link", copy.openLessons);
+    setText(".hero-actions .secondary-link", copy.chooseExam);
+    setText(".stat-one span", copy.lessonTopics);
+    setText(".stat-two span", copy.mastery);
+    setText(".value-row article h2", copy.lessonsCard, 0);
+    setText(".value-row article p", copy.lessonsCardText, 0);
+    setText(".value-row article h2", copy.examsCard, 1);
+    setText(".value-row article p", copy.examsCardText, 1);
+    setText(".value-row article h2", copy.progressCard, 2);
+    setText(".value-row article p", copy.progressCardText, 2);
+    setText(".save-notice .eyebrow", copy.saveKicker);
+    setText(".save-notice h2", copy.saveTitle);
+    setText(".save-notice > p", copy.saveText);
+  }
+
+  if (els.topicTitle) {
+    setText(".page-hero .eyebrow", copy.lessonsHeroKicker);
+    setText(".page-hero h1", copy.lessonsHeroTitle);
+    setText(".page-hero .hero-text", copy.lessonsHeroText);
+    setText(".topic-group-label", copy.pronounsGroup, 0);
+    setText(".topic-group-label", copy.coreGroup, 1);
+    setText(".save-notice .eyebrow", copy.localKicker);
+    setText(".save-notice h2", copy.localTitle);
+    setText(".save-notice > p", copy.localText);
+  }
+
+  if (els.answerOptions) {
+    setText(".page-hero .eyebrow", copy.examHeroKicker);
+    setText(".page-hero h1", copy.examHeroTitle);
+    setText(".page-hero .hero-text", copy.examHeroText);
+    setText(".save-notice .eyebrow", copy.cloudKicker);
+    setText(".save-notice h2", copy.cloudTitle);
+    setText(".save-notice > p", copy.cloudText);
+    setText(".quiz-intro .eyebrow", copy.progress);
+    setText(".quiz-intro h2", copy.practiceTitle);
+    setLeadingText(".exam-controls label", copy.topic, 0);
+    setLeadingText(".exam-controls label", copy.level, 1);
+    setText("#startExam", copy.startExam);
+    setText("#nextQuestion", copy.nextQuestion);
+  }
 }
 
 function renderLanguageBridge(topicKey) {
