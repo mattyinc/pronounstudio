@@ -923,6 +923,12 @@ const examTopics = {
 
 const questionTypes = ["MCQ", "Spanish to English", "English to Spanish", "Correct the Error", "Fill in the Blank"];
 const genericDistractors = ["Lo veo.", "Le mandé un mensaje.", "Se lo dije.", "Me levanto temprano.", "Te lo voy a mandar.", "Quiero que lo hagas."];
+const SUPABASE_URL = "https://byjxdmeousrepzjtgxvm.supabase.co";
+const SUPABASE_KEY = "sb_publishable_NIK7EwHsv-YeizMoiurj_g_Pn3pvQ-g";
+const supabaseClient = window.supabase?.createClient(SUPABASE_URL, SUPABASE_KEY);
+let currentUser = null;
+let cloudSyncTimer = null;
+let isApplyingCloudProgress = false;
 
 function shuffle(items) {
   return [...items].sort((a, b) => a.localeCompare(b));
@@ -1051,6 +1057,9 @@ const els = {
   examMeta: document.getElementById("examMeta"),
   themeToggle: document.getElementById("themeToggle"),
   themeText: document.getElementById("themeText"),
+  signInBtn: document.getElementById("signInBtn"),
+  signOutBtn: document.getElementById("signOutBtn"),
+  authStatus: document.getElementById("authStatus"),
 };
 
 function setTheme(theme) {
@@ -1060,6 +1069,114 @@ function setTheme(theme) {
   if (els.themeToggle) els.themeToggle.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
   if (els.themeText) els.themeText.textContent = isDark ? "Dark" : "Light";
   localStorage.setItem("theme", theme);
+}
+
+function getProgressSnapshot() {
+  return {
+    answered: state.answered,
+    correct: state.correct,
+    streak: state.streak,
+    misses: state.misses,
+    examTopic: state.examTopic,
+    examLevel: state.examLevel,
+    lessonTopic: state.topic,
+    theme: document.body.dataset.theme || "light",
+  };
+}
+
+function applyProgressSnapshot(progress) {
+  if (!progress) return;
+  isApplyingCloudProgress = true;
+  state.answered = Number(progress.answered || 0);
+  state.correct = Number(progress.correct || 0);
+  state.streak = Number(progress.streak || 0);
+  state.misses = progress.misses || {};
+  state.examTopic = progress.examTopic || progress.lessonTopic || state.examTopic || "direct";
+  state.examLevel = Number(progress.examLevel || state.examLevel || 1);
+  if (progress.theme) setTheme(progress.theme);
+  if (els.examTopic) els.examTopic.value = state.examTopic;
+  if (els.examLevel) els.examLevel.value = String(state.examLevel);
+  saveProgress();
+  renderTopic(progress.lessonTopic || state.examTopic);
+  renderProgress();
+  if (els.answerOptions) startExam();
+  isApplyingCloudProgress = false;
+}
+
+function renderAuth() {
+  if (!els.signInBtn || !els.signOutBtn || !els.authStatus) return;
+  const isSignedIn = Boolean(currentUser);
+  els.signInBtn.classList.toggle("hidden", isSignedIn);
+  els.signOutBtn.classList.toggle("hidden", !isSignedIn);
+  els.authStatus.textContent = isSignedIn ? currentUser.email || "Cloud sync on" : "Local progress";
+}
+
+async function signInWithGoogle() {
+  if (!supabaseClient) return;
+  await supabaseClient.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      redirectTo: window.location.href,
+    },
+  });
+}
+
+async function signOut() {
+  if (!supabaseClient) return;
+  await supabaseClient.auth.signOut();
+}
+
+async function loadCloudProgress() {
+  if (!supabaseClient || !currentUser) return;
+  const { data, error } = await supabaseClient
+    .from("user_progress")
+    .select("progress")
+    .eq("user_id", currentUser.id)
+    .maybeSingle();
+  if (error) {
+    if (els.authStatus) els.authStatus.textContent = "Cloud sync error";
+    return;
+  }
+  if (data?.progress) {
+    applyProgressSnapshot(data.progress);
+  } else {
+    await saveCloudProgress();
+  }
+}
+
+async function saveCloudProgress() {
+  if (!supabaseClient || !currentUser || isApplyingCloudProgress) return;
+  const { error } = await supabaseClient.from("user_progress").upsert(
+    {
+      user_id: currentUser.id,
+      progress: getProgressSnapshot(),
+      updated_at: new Date().toISOString(),
+    },
+    { onConflict: "user_id" }
+  );
+  if (error && els.authStatus) els.authStatus.textContent = "Cloud sync error";
+}
+
+function scheduleCloudSave() {
+  if (!currentUser || isApplyingCloudProgress) return;
+  window.clearTimeout(cloudSyncTimer);
+  cloudSyncTimer = window.setTimeout(saveCloudProgress, 450);
+}
+
+async function initAuth() {
+  if (!supabaseClient) {
+    renderAuth();
+    return;
+  }
+  const { data } = await supabaseClient.auth.getSession();
+  currentUser = data.session?.user || null;
+  renderAuth();
+  if (currentUser) await loadCloudProgress();
+  supabaseClient.auth.onAuthStateChange(async (_event, session) => {
+    currentUser = session?.user || null;
+    renderAuth();
+    if (currentUser) await loadCloudProgress();
+  });
 }
 
 function renderTopic(topicKey) {
@@ -1242,6 +1359,10 @@ function saveProgress() {
   localStorage.setItem("correct", String(state.correct));
   localStorage.setItem("streak", String(state.streak));
   localStorage.setItem("misses", JSON.stringify(state.misses));
+  localStorage.setItem("examTopic", state.examTopic);
+  localStorage.setItem("examLevel", String(state.examLevel));
+  localStorage.setItem("lessonTopic", state.topic);
+  scheduleCloudSave();
 }
 
 els.nav.forEach((button) => {
@@ -1273,8 +1394,11 @@ if (els.examLevel) {
 if (els.themeToggle) {
   els.themeToggle.addEventListener("click", () => {
     setTheme(document.body.dataset.theme === "dark" ? "light" : "dark");
+    saveProgress();
   });
 }
+if (els.signInBtn) els.signInBtn.addEventListener("click", signInWithGoogle);
+if (els.signOutBtn) els.signOutBtn.addEventListener("click", signOut);
 if (els.resetProgress) {
   els.resetProgress.addEventListener("click", () => {
     state.answered = 0;
@@ -1293,3 +1417,4 @@ if (els.examLevel) els.examLevel.value = String(state.examLevel);
 renderTopic(state.examTopic);
 renderProgress();
 startExam();
+initAuth();

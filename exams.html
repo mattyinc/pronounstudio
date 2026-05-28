@@ -25,6 +25,9 @@
         <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
           <span class="theme-icon" aria-hidden="true"></span>
         </button>
+        <button id="signInBtn" class="plain-btn auth-btn" type="button">Sign in</button>
+        <span id="authStatus" class="auth-status">Local progress</span>
+        <button id="signOutBtn" class="plain-btn auth-btn hidden" type="button">Sign out</button>
         <button id="resetProgress" class="plain-btn" type="button">Reset</button>
         <a class="secondary-link" href="lessons.html">Review lessons</a>
       </div>
@@ -90,6 +93,7 @@
       </section>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="app.js"></script>
   </body>
 </html>
