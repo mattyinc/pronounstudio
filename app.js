@@ -1191,6 +1191,7 @@ const staticCopy = {
     goToExams: "Go to exams",
     reset: "Reset",
     signOut: "Sign out",
+    signInGoogle: "Sign in with Google",
     homeHeroKicker: "Mexican Spanish Grammar",
     homeHeroTitle: "Understand pronouns without the noise.",
     homeHeroText: "A spacious learning studio with deep lessons, focused examples, checkpoints, and level-based exams.",
@@ -1227,6 +1228,7 @@ const staticCopy = {
     nextQuestion: "Next question",
   },
   hi: {
+    signInGoogle: "Google से साइन इन",
     lessons: "पाठ", exams: "परीक्षा", startLearning: "सीखना शुरू करें", openLessons: "पाठ खोलें", chooseExam: "परीक्षा चुनें", reviewLessons: "पाठ दोहराएँ", goToExams: "परीक्षा पर जाएँ", reset: "रीसेट", signOut: "साइन आउट",
     homeHeroKicker: "Mexican Spanish व्याकरण", homeHeroTitle: "Pronouns को बिना शोर के समझें।", homeHeroText: "गहरे पाठ, साफ examples, checkpoints और level-based exams वाला शांत learning studio.",
     lessonTopics: "पाठ विषय", mastery: "mastery", lessonsCard: "पाठ पेज", lessonsCardText: "पहले pronouns, फिर connectors, adjectives, time और tenses examples/checkpoints के साथ पढ़ें।", examsCard: "परीक्षा पेज", examsCardText: "Topic और level चुनें, फिर mastery के लिए mixed questions करें।", progressCard: "Progress memory", progressCardText: "आपका streak, attempts, theme और selected exam pages के बीच save रहता है।",
@@ -1235,6 +1237,7 @@ const staticCopy = {
     examHeroKicker: "Exam studio", examHeroTitle: "अपनी परीक्षा चुनें।", examHeroText: "हर topic में 5 levels हैं और हर level में कम से कम 40 mixed questions हैं।", cloudKicker: "Cloud progress", cloudTitle: "Scores save करने हैं?", cloudText: "Exams बिना login चलते हैं, लेकिन cloud streak/progress Google sign-in के बाद sync होती है।", progress: "Progress", practiceTitle: "Practice करें जब तक automatic लगे।", topic: "Topic", level: "Level", startExam: "Exam शुरू करें", nextQuestion: "अगला question",
   },
   ta: {
+    signInGoogle: "Google மூலம் உள்நுழை",
     lessons: "பாடங்கள்", exams: "தேர்வுகள்", startLearning: "கற்க தொடங்கு", openLessons: "பாடங்களைத் திற", chooseExam: "தேர்வு தேர்வு செய்", reviewLessons: "பாடம் மீள்பார்", goToExams: "தேர்வுகளுக்கு செல்", reset: "Reset", signOut: "Sign out",
     homeHeroKicker: "Mexican Spanish இலக்கணம்", homeHeroTitle: "Pronouns-ஐ அமைதியாகப் புரிந்துகொள்ளுங்கள்.", homeHeroText: "ஆழமான பாடங்கள், தெளிவான examples, checkpoints, level-based exams கொண்ட spacious studio.",
     lessonTopics: "பாட தலைப்புகள்", mastery: "mastery", lessonsCard: "பாடப் பக்கம்", lessonsCardText: "Pronouns முதலில்; பிறகு connectors, adjectives, time, tenses examples/checkpoints உடன்.", examsCard: "தேர்வு பக்கம்", examsCardText: "Topic மற்றும் level தேர்வு செய்து mixed questions மூலம் mastery பெறுங்கள்.", progressCard: "Progress memory", progressCardText: "Streak, attempts, theme, selected exam pages இடையே சேமிக்கப்படும்.",
@@ -1243,6 +1246,7 @@ const staticCopy = {
     examHeroKicker: "Exam studio", examHeroTitle: "எந்த exam வேண்டுமோ தேர்வு செய்யுங்கள்.", examHeroText: "ஒவ்வொரு topic-க்கும் 5 levels; ஒவ்வொரு level-லும் குறைந்தது 40 mixed questions.", cloudKicker: "Cloud progress", cloudTitle: "Scores save வேண்டுமா?", cloudText: "Login இல்லாமல் exams இயங்கும்; cloud sync Google sign-in பிறகு மட்டும்.", progress: "Progress", practiceTitle: "Automatic ஆகும் வரை practice.", topic: "Topic", level: "Level", startExam: "Exam தொடங்கு", nextQuestion: "அடுத்த question",
   },
   bn: {
+    signInGoogle: "Google দিয়ে সাইন ইন",
     lessons: "পাঠ", exams: "পরীক্ষা", startLearning: "শেখা শুরু করুন", openLessons: "পাঠ খুলুন", chooseExam: "পরীক্ষা বাছুন", reviewLessons: "পাঠ দেখুন", goToExams: "পরীক্ষায় যান", reset: "Reset", signOut: "Sign out",
     homeHeroKicker: "Mexican Spanish Grammar", homeHeroTitle: "Pronouns সহজভাবে বুঝুন।", homeHeroText: "গভীর lessons, পরিষ্কার examples, checkpoints এবং level-based exams সহ একটি শান্ত learning studio.",
     lessonTopics: "lesson topics", mastery: "mastery", lessonsCard: "Lessons page", lessonsCardText: "প্রথমে pronouns, তারপর connectors, adjectives, time, tenses examples/checkpoints সহ পড়ুন।", examsCard: "Exams page", examsCardText: "Topic ও level বেছে mixed questions দিয়ে mastery তৈরি করুন।", progressCard: "Progress memory", progressCardText: "Streak, attempts, theme এবং selected exam pages-এর মধ্যে save থাকে।",
@@ -1251,6 +1255,7 @@ const staticCopy = {
     examHeroKicker: "Exam studio", examHeroTitle: "আপনি যে exam নিতে চান সেটি বেছে নিন।", examHeroText: "প্রতিটি topic-এ 5 levels এবং প্রতিটি level-এ অন্তত 40 mixed questions আছে।", cloudKicker: "Cloud progress", cloudTitle: "Scores save করতে চান?", cloudText: "Login ছাড়াই exams চলে, কিন্তু cloud progress Google sign-in-এর পর sync হয়।", progress: "Progress", practiceTitle: "Automatic লাগা পর্যন্ত practice করুন।", topic: "Topic", level: "Level", startExam: "Exam শুরু করুন", nextQuestion: "পরের question",
   },
   am: {
+    signInGoogle: "Google በመጠቀም ይግቡ",
     lessons: "ትምህርቶች", exams: "ፈተናዎች", startLearning: "መማር ጀምር", openLessons: "ትምህርቶችን ክፈት", chooseExam: "ፈተና ምረጥ", reviewLessons: "ትምህርት ክለሳ", goToExams: "ወደ ፈተና", reset: "Reset", signOut: "Sign out",
     homeHeroKicker: "Mexican Spanish Grammar", homeHeroTitle: "Pronounsን በግልጽ መንገድ ይረዱ።", homeHeroText: "ጥልቅ lessons, examples, checkpoints እና level-based exams ያለው ሰፊ learning studio.",
     lessonTopics: "lesson topics", mastery: "mastery", lessonsCard: "Lessons page", lessonsCardText: "Pronouns መጀመሪያ፣ ከዚያ connectors, adjectives, time, tenses ከexamples/checkpoints ጋር።", examsCard: "Exams page", examsCardText: "Topic እና level ይምረጡ፣ mixed questions ይለማመዱ።", progressCard: "Progress memory", progressCardText: "Streak, attempts, theme, selected exam በpages መካከል save ይሆናሉ።",
@@ -1259,6 +1264,223 @@ const staticCopy = {
     examHeroKicker: "Exam studio", examHeroTitle: "የሚፈልጉትን exam ይምረጡ።", examHeroText: "እያንዳንዱ topic 5 levels አለው፣ በlevel ውስጥ ቢያንስ 40 mixed questions.", cloudKicker: "Cloud progress", cloudTitle: "Scores save ይፈልጋሉ?", cloudText: "Exams ያለ login ይሰራሉ፣ cloud sync ግን Google sign-in በኋላ.", progress: "Progress", practiceTitle: "Automatic እስኪሆን ድረስ practice.", topic: "Topic", level: "Level", startExam: "Exam ጀምር", nextQuestion: "ቀጣይ question",
   },
 };
+const localizedUiOverrides = {
+  hi: {
+    homeHeroKicker: "मैक्सिकन स्पैनिश व्याकरण",
+    homeHeroTitle: "सर्वनामों को शांत और स्पष्ट तरीके से समझें।",
+    homeHeroText: "गहरे पाठ, साफ उदाहरण, जाँच-बिंदु और स्तर-आधारित परीक्षाओं वाला शांत सीखने का स्थान।",
+    lessonTopics: "पाठ विषय",
+    mastery: "निपुणता",
+    lessonsCard: "पाठ पृष्ठ",
+    lessonsCardText: "पहले सर्वनाम पढ़ें, फिर संयोजक, विशेषण, समय और काल को उदाहरणों और जाँच-बिंदुओं के साथ सीखें।",
+    examsCard: "परीक्षा पृष्ठ",
+    examsCardText: "विषय और स्तर चुनें, फिर निपुणता के लिए मिश्रित प्रश्नों पर काम करें।",
+    progressCard: "प्रगति स्मृति",
+    progressCardText: "आपकी शृंखला, प्रयास, थीम और चुनी हुई परीक्षा पृष्ठों के बीच सुरक्षित रहती है।",
+    saveKicker: "प्रगति सुरक्षित करना",
+    saveTitle: "स्वतंत्र रूप से सीखें। क्लाउड प्रगति चाहिए तभी साइन इन करें।",
+    saveText: "खाते के बिना भी हर पाठ और परीक्षा काम करती है। Google से साइन इन करने पर आपकी प्रगति उपकरणों पर सुरक्षित होगी।",
+    lessonsHeroTitle: "एक बार में एक भाग पढ़ें।",
+    lessonsHeroText: "विषय चुनें, गहराई से पढ़ें, उदाहरण देखें, फिर परीक्षा से पहले जाँच-बिंदु पूरे करें।",
+    pronounsGroup: "सर्वनाम",
+    coreGroup: "मुख्य स्पैनिश",
+    localKicker: "स्थानीय मोड",
+    localText: "क्लाउड में सुरक्षित करना हो तो Google से साइन इन करें। बिना साइन इन यह ब्राउज़र प्रगति स्थानीय रूप से रखता है।",
+    examHeroKicker: "परीक्षा केंद्र",
+    examHeroTitle: "जो परीक्षा देनी है उसे चुनें।",
+    examHeroText: "हर विषय में 5 स्तर हैं और हर स्तर में कम से कम 40 मिश्रित प्रश्न हैं।",
+    cloudKicker: "क्लाउड प्रगति",
+    cloudTitle: "अंक सुरक्षित करने हैं?",
+    cloudText: "परीक्षाएँ बिना लॉगिन चलती हैं, लेकिन क्लाउड शृंखला और प्रगति Google साइन इन के बाद ही sync होती है।",
+    progress: "प्रगति",
+    practiceTitle: "अभ्यास करें जब तक बात सहज न हो जाए।",
+    topic: "विषय",
+    level: "स्तर",
+    startExam: "परीक्षा शुरू करें",
+    nextQuestion: "अगला प्रश्न",
+  },
+  ta: {
+    homeHeroKicker: "மெக்சிகன் ஸ்பானிஷ் இலக்கணம்",
+    homeHeroText: "ஆழமான பாடங்கள், தெளிவான எடுத்துக்காட்டுகள், சரிபார்ப்பு புள்ளிகள், நிலை அடிப்படையிலான தேர்வுகள் கொண்ட அமைதியான கற்றல் இடம்.",
+    lessonTopics: "பாடத் தலைப்புகள்",
+    mastery: "திறன் நிலை",
+    lessonsCardText: "முதலில் சுட்டுப்பெயர்கள்; பிறகு இணைப்புச் சொற்கள், பெயரெச்சங்கள், நேரம், காலங்களை எடுத்துக்காட்டுகள் மற்றும் சரிபார்ப்பு புள்ளிகளுடன் கற்கவும்.",
+    examsCardText: "தலைப்பு மற்றும் நிலையைத் தேர்ந்தெடுத்து, கலந்த கேள்விகளால் திறனை வளர்த்துக்கொள்ளுங்கள்.",
+    progressCard: "முன்னேற்ற நினைவு",
+    progressCardText: "தொடர், முயற்சிகள், தோற்றம், தேர்ந்தெடுத்த தேர்வு ஆகியவை பக்கங்களுக்கு இடையில் சேமிக்கப்படும்.",
+    saveKicker: "முன்னேற்ற சேமிப்பு",
+    saveTitle: "சுதந்திரமாக கற்றுக்கொள்ளுங்கள். மேகச் சேமிப்பு வேண்டுமென்றால் மட்டும் உள்நுழையுங்கள்.",
+    saveText: "கணக்கு இல்லாமலும் எல்லா பாடங்களும் தேர்வுகளும் இயங்கும். Google மூலம் உள்நுழைந்தால் முன்னேற்றம் சாதனங்களில் சேமிக்கப்படும்.",
+    lessonsHeroTitle: "ஒரு நேரத்தில் ஒரு பகுதியைப் படியுங்கள்.",
+    lessonsHeroText: "தலைப்பைத் தேர்வு செய்து ஆழமாகப் படியுங்கள்; எடுத்துக்காட்டுகளைப் பாருங்கள்; தேர்வுக்கு முன் சரிபார்ப்பு புள்ளிகளை முடிக்கவும்.",
+    pronounsGroup: "சுட்டுப்பெயர்கள்",
+    coreGroup: "முக்கிய ஸ்பானிஷ்",
+    localKicker: "உள்ளூர் முறை",
+    localText: "மேகத்தில் சேமிக்க வேண்டுமென்றால் Google மூலம் உள்நுழையுங்கள். இல்லையெனில் இந்த உலாவி முன்னேற்றத்தை உள்ளூரில் வைத்திருக்கும்.",
+    examHeroKicker: "தேர்வு மையம்",
+    examHeroTitle: "நீங்கள் எடுக்க விரும்பும் தேர்வைத் தேர்ந்தெடுக்கவும்.",
+    examHeroText: "ஒவ்வொரு தலைப்புக்கும் 5 நிலைகள் உள்ளன; ஒவ்வொரு நிலையிலும் குறைந்தது 40 கலந்த கேள்விகள் உள்ளன.",
+    cloudKicker: "மேக முன்னேற்றம்",
+    cloudTitle: "மதிப்பெண்களை சேமிக்க வேண்டுமா?",
+    cloudText: "உள்நுழையாமல் தேர்வுகள் இயங்கும்; ஆனால் மேக முன்னேற்றம் Google உள்நுழைவுக்குப் பிறகே ஒத்திசையும்.",
+    progress: "முன்னேற்றம்",
+    practiceTitle: "தானாக வரும்வரை பயிற்சி செய்யுங்கள்.",
+    topic: "தலைப்பு",
+    level: "நிலை",
+    startExam: "தேர்வை தொடங்கு",
+    nextQuestion: "அடுத்த கேள்வி",
+  },
+  bn: {
+    homeHeroKicker: "মেক্সিকান স্প্যানিশ ব্যাকরণ",
+    homeHeroTitle: "সর্বনাম সহজ ও শান্তভাবে বুঝুন।",
+    homeHeroText: "গভীর পাঠ, পরিষ্কার উদাহরণ, যাচাই-বিন্দু এবং স্তরভিত্তিক পরীক্ষা সহ একটি শান্ত শেখার জায়গা।",
+    lessonTopics: "পাঠের বিষয়",
+    mastery: "দক্ষতা",
+    lessonsCard: "পাঠ পৃষ্ঠা",
+    lessonsCardText: "প্রথমে সর্বনাম, তারপর সংযোগকারী, বিশেষণ, সময় ও কাল উদাহরণ এবং যাচাই-বিন্দু সহ শিখুন।",
+    examsCard: "পরীক্ষা পৃষ্ঠা",
+    examsCardText: "বিষয় ও স্তর বেছে নিয়ে মিশ্র প্রশ্নের মাধ্যমে দক্ষতা তৈরি করুন।",
+    progressCard: "অগ্রগতি স্মৃতি",
+    progressCardText: "আপনার ধারাবাহিকতা, চেষ্টা, থিম এবং নির্বাচিত পরীক্ষা পৃষ্ঠার মধ্যে সংরক্ষিত থাকে।",
+    saveKicker: "অগ্রগতি সংরক্ষণ",
+    saveTitle: "স্বাধীনভাবে শিখুন। ক্লাউড অগ্রগতি চাইলে তবেই সাইন ইন করুন।",
+    saveText: "অ্যাকাউন্ট ছাড়াও সব পাঠ ও পরীক্ষা চলে। Google দিয়ে সাইন ইন করলে অগ্রগতি ডিভাইসগুলোতে সংরক্ষিত হবে।",
+    lessonsHeroTitle: "একবারে একটি অংশ পড়ুন।",
+    lessonsHeroText: "বিষয় বেছে গভীরভাবে পড়ুন, উদাহরণ দেখুন, তারপর পরীক্ষার আগে যাচাই-বিন্দু শেষ করুন।",
+    pronounsGroup: "সর্বনাম",
+    coreGroup: "মূল স্প্যানিশ",
+    localKicker: "স্থানীয় মোড",
+    localText: "ক্লাউডে সংরক্ষণ চাইলে Google দিয়ে সাইন ইন করুন। না হলে এই ব্রাউজার অগ্রগতি স্থানীয়ভাবে রাখবে।",
+    examHeroKicker: "পরীক্ষা কেন্দ্র",
+    examHeroTitle: "আপনি যে পরীক্ষা দিতে চান সেটি বেছে নিন।",
+    examHeroText: "প্রতিটি বিষয়ে 5টি স্তর আছে এবং প্রতিটি স্তরে অন্তত 40টি মিশ্র প্রশ্ন আছে।",
+    cloudKicker: "ক্লাউড অগ্রগতি",
+    cloudTitle: "স্কোর সংরক্ষণ করতে চান?",
+    cloudText: "লগইন ছাড়াই পরীক্ষা চলে, কিন্তু ক্লাউড অগ্রগতি Google সাইন ইনের পরে sync হয়।",
+    progress: "অগ্রগতি",
+    practiceTitle: "সহজে আসা পর্যন্ত অনুশীলন করুন।",
+    topic: "বিষয়",
+    level: "স্তর",
+    startExam: "পরীক্ষা শুরু করুন",
+    nextQuestion: "পরের প্রশ্ন",
+  },
+  am: {
+    homeHeroKicker: "የሜክሲኮ ስፓኒሽ ሰዋሰው",
+    homeHeroTitle: "ተውላጠ ስሞችን በግልጽ እና በሰላም ይረዱ።",
+    homeHeroText: "ጥልቅ ትምህርቶች፣ ግልጽ ምሳሌዎች፣ የማረጋገጫ ነጥቦች እና በደረጃ የተዘጋጁ ፈተናዎች ያሉት ሰፊ የመማሪያ ቦታ።",
+    lessonTopics: "የትምህርት ርዕሶች",
+    mastery: "ችሎታ",
+    lessonsCard: "የትምህርት ገጽ",
+    lessonsCardText: "መጀመሪያ ተውላጠ ስሞችን፣ ከዚያ ማገናኛ ቃላትን፣ ቅጽሎችን፣ ጊዜን እና የግስ ጊዜዎችን ከምሳሌዎች እና የማረጋገጫ ነጥቦች ጋር ይማሩ።",
+    examsCard: "የፈተና ገጽ",
+    examsCardText: "ርዕስ እና ደረጃ ይምረጡ፣ ከዚያ በተቀላቀሉ ጥያቄዎች ችሎታዎን ያጠናክሩ።",
+    progressCard: "የእድገት ማስታወሻ",
+    progressCardText: "ተከታታይነት፣ ሙከራዎች፣ ገጽታ እና የተመረጠ ፈተና በገጾች መካከል ይቀመጣሉ።",
+    saveKicker: "እድገት ማስቀመጥ",
+    saveTitle: "በነፃ ይማሩ። የደመና ማስቀመጥ ሲፈልጉ ብቻ ይግቡ።",
+    saveText: "ያለ መለያም ሁሉም ትምህርቶች እና ፈተናዎች ይሰራሉ። Google በመጠቀም ከገቡ እድገትዎ በመሣሪያዎች ላይ ይቀመጣል።",
+    lessonsHeroKicker: "ትምህርቶች",
+    lessonsHeroTitle: "በአንድ ጊዜ አንድ ክፍል ይማሩ።",
+    lessonsHeroText: "ርዕስ ይምረጡ፣ በጥልቅ ያንብቡ፣ ምሳሌዎችን ይመልከቱ፣ ከዚያ ከፈተና በፊት የማረጋገጫ ነጥቦችን ያጠናቁ።",
+    pronounsGroup: "ተውላጠ ስሞች",
+    coreGroup: "ዋና ስፓኒሽ",
+    localKicker: "አካባቢያዊ ሁነታ",
+    localTitle: "አሁን መማር ይችላሉ።",
+    localText: "በደመና ላይ ማስቀመጥ ከፈለጉ Google በመጠቀም ይግቡ። ካልገቡ ይህ አሳሽ እድገትዎን በአካባቢው ይይዛል።",
+    examHeroKicker: "የፈተና ማዕከል",
+    examHeroTitle: "መውሰድ የሚፈልጉትን ፈተና ይምረጡ።",
+    examHeroText: "እያንዳንዱ ርዕስ 5 ደረጃዎች አሉት፣ በእያንዳንዱ ደረጃም ቢያንስ 40 ተቀላቀሉ ጥያቄዎች አሉ።",
+    cloudKicker: "የደመና እድገት",
+    cloudTitle: "ውጤቶችን ማስቀመጥ ይፈልጋሉ?",
+    cloudText: "ፈተናዎች ያለ መግባት ይሰራሉ፣ ግን የደመና እድገት Google በመግባት በኋላ ብቻ ይመሳሰላል።",
+    progress: "እድገት",
+    practiceTitle: "በተፈጥሮ እስኪመጣ ድረስ ይለማመዱ።",
+    topic: "ርዕስ",
+    level: "ደረጃ",
+    startExam: "ፈተና ጀምር",
+    nextQuestion: "ቀጣይ ጥያቄ",
+  },
+};
+Object.entries(localizedUiOverrides).forEach(([language, overrides]) => {
+  staticCopy[language] = { ...(staticCopy[language] || {}), ...overrides };
+});
+const lessonChrome = {
+  en: {
+    examples: "Examples",
+    realSentences: "Real sentences for this lesson",
+    checkpoints: "Checkpoints",
+    pronounPlacement: "Pronoun placement",
+    avoid: "What to avoid",
+    goodPractice: "Good practice",
+  },
+  hi: {
+    examples: "उदाहरण",
+    realSentences: "इस पाठ के वास्तविक वाक्य",
+    checkpoints: "जाँच-बिंदु",
+    pronounPlacement: "सर्वनाम की जगह",
+    avoid: "इन गलतियों से बचें",
+    goodPractice: "अच्छा अभ्यास",
+  },
+  ta: {
+    examples: "எடுத்துக்காட்டுகள்",
+    realSentences: "இந்தப் பாடத்திற்கான உண்மையான வாக்கியங்கள்",
+    checkpoints: "சரிபார்ப்பு புள்ளிகள்",
+    pronounPlacement: "சுட்டுப்பெயர் இடம்",
+    avoid: "தவிர்க்க வேண்டியது",
+    goodPractice: "நல்ல பயிற்சி",
+  },
+  bn: {
+    examples: "উদাহরণ",
+    realSentences: "এই পাঠের বাস্তব বাক্য",
+    checkpoints: "যাচাই-বিন্দু",
+    pronounPlacement: "সর্বনামের অবস্থান",
+    avoid: "যা এড়াবেন",
+    goodPractice: "ভালো অনুশীলন",
+  },
+  am: {
+    examples: "ምሳሌዎች",
+    realSentences: "ለዚህ ትምህርት ተፈጥሯዊ ዓረፍተ ነገሮች",
+    checkpoints: "የማረጋገጫ ነጥቦች",
+    pronounPlacement: "የተውላጠ ስም ቦታ",
+    avoid: "ማስወገድ ያለብዎት",
+    goodPractice: "ጥሩ ልምምድ",
+  },
+};
+const courseTermReplacements = {
+  hi: [
+    [/Direct object pronouns/g, "प्रत्यक्ष कर्म सर्वनाम"], [/Direct objects/g, "प्रत्यक्ष कर्म"], [/Indirect object pronouns/g, "अप्रत्यक्ष कर्म सर्वनाम"], [/Indirect objects/g, "अप्रत्यक्ष कर्म"], [/Double pronouns/g, "दोहरे सर्वनाम"], [/Reflexive pronouns/g, "आत्मवाचक सर्वनाम"], [/Reflexive verbs/g, "आत्मवाचक क्रियाएँ"], [/Connectors/g, "संयोजक"], [/Adjectives/g, "विशेषण"], [/Time expressions/g, "समय के प्रयोग"], [/Top 12 Spanish tenses/g, "स्पैनिश के 12 मुख्य काल"], [/\bPronouns\b/g, "सर्वनाम"], [/\bpronouns\b/g, "सर्वनाम"], [/\bSpanish\b/g, "स्पैनिश"],
+    [/\bTopic\b/g, "विषय"], [/\btopic\b/g, "विषय"], [/\bExamples\b/g, "उदाहरण"], [/\bexamples\b/g, "उदाहरण"], [/\bCheckpoints\b/g, "जाँच-बिंदु"], [/\bcheckpoints\b/g, "जाँच-बिंदु"],
+    [/\bExams\b/g, "परीक्षाएँ"], [/\bexams\b/g, "परीक्षाएँ"], [/\bExam\b/g, "परीक्षा"], [/\bexam\b/g, "परीक्षा"], [/\bLevel\b/g, "स्तर"], [/\blevel\b/g, "स्तर"], [/\bQuestions\b/g, "प्रश्न"], [/\bquestions\b/g, "प्रश्न"],
+    [/\bPractice\b/g, "अभ्यास"], [/\bpractice\b/g, "अभ्यास"], [/\bProgress\b/g, "प्रगति"], [/\bprogress\b/g, "प्रगति"], [/\bCloud\b/g, "क्लाउड"], [/\bcloud\b/g, "क्लाउड"], [/\bbrowser\b/g, "ब्राउज़र"],
+  ],
+  bn: [
+    [/Direct object pronouns/g, "প্রত্যক্ষ কর্ম সর্বনাম"], [/Direct objects/g, "প্রত্যক্ষ কর্ম"], [/Indirect object pronouns/g, "পরোক্ষ কর্ম সর্বনাম"], [/Indirect objects/g, "পরোক্ষ কর্ম"], [/Double pronouns/g, "দ্বৈত সর্বনাম"], [/Reflexive pronouns/g, "আত্মবাচক সর্বনাম"], [/Reflexive verbs/g, "আত্মবাচক ক্রিয়া"], [/Connectors/g, "সংযোগকারী"], [/Adjectives/g, "বিশেষণ"], [/Time expressions/g, "সময়ের ব্যবহার"], [/Top 12 Spanish tenses/g, "স্প্যানিশের ১২টি প্রধান কাল"], [/\bPronouns\b/g, "সর্বনাম"], [/\bpronouns\b/g, "সর্বনাম"], [/\bSpanish\b/g, "স্প্যানিশ"],
+    [/\bTopic\b/g, "বিষয়"], [/\btopic\b/g, "বিষয়"], [/\bExamples\b/g, "উদাহরণ"], [/\bexamples\b/g, "উদাহরণ"], [/\bCheckpoints\b/g, "যাচাই-বিন্দু"], [/\bcheckpoints\b/g, "যাচাই-বিন্দু"],
+    [/\bExams\b/g, "পরীক্ষা"], [/\bexams\b/g, "পরীক্ষা"], [/\bExam\b/g, "পরীক্ষা"], [/\bexam\b/g, "পরীক্ষা"], [/\bLevel\b/g, "স্তর"], [/\blevel\b/g, "স্তর"], [/\bQuestions\b/g, "প্রশ্ন"], [/\bquestions\b/g, "প্রশ্ন"],
+    [/\bPractice\b/g, "অনুশীলন"], [/\bpractice\b/g, "অনুশীলন"], [/\bProgress\b/g, "অগ্রগতি"], [/\bprogress\b/g, "অগ্রগতি"], [/\bCloud\b/g, "ক্লাউড"], [/\bcloud\b/g, "ক্লাউড"], [/\bbrowser\b/g, "ব্রাউজার"],
+  ],
+  am: [
+    [/Direct object pronouns/g, "ቀጥተኛ ተሳቢ ተውላጠ ስሞች"], [/Direct objects/g, "ቀጥተኛ ተሳቢዎች"], [/Indirect object pronouns/g, "ተዘዋዋሪ ተሳቢ ተውላጠ ስሞች"], [/Indirect objects/g, "ተዘዋዋሪ ተሳቢዎች"], [/Double pronouns/g, "ድርብ ተውላጠ ስሞች"], [/Reflexive pronouns/g, "አንጸባራቂ ተውላጠ ስሞች"], [/Reflexive verbs/g, "አንጸባራቂ ግሶች"], [/Connectors/g, "ማገናኛ ቃላት"], [/Adjectives/g, "ቅጽሎች"], [/Time expressions/g, "የጊዜ አገላለጾች"], [/Top 12 Spanish tenses/g, "12 ዋና የስፓኒሽ የግስ ጊዜዎች"], [/\bPronouns\b/g, "ተውላጠ ስሞች"], [/\bpronouns\b/g, "ተውላጠ ስሞች"], [/\bSpanish\b/g, "ስፓኒሽ"],
+    [/\bTopic\b/g, "ርዕስ"], [/\btopic\b/g, "ርዕስ"], [/\bExamples\b/g, "ምሳሌዎች"], [/\bexamples\b/g, "ምሳሌዎች"], [/\bCheckpoints\b/g, "የማረጋገጫ ነጥቦች"], [/\bcheckpoints\b/g, "የማረጋገጫ ነጥቦች"],
+    [/\bExams\b/g, "ፈተናዎች"], [/\bexams\b/g, "ፈተናዎች"], [/\bExam\b/g, "ፈተና"], [/\bexam\b/g, "ፈተና"], [/\bLevel\b/g, "ደረጃ"], [/\blevel\b/g, "ደረጃ"], [/\bQuestions\b/g, "ጥያቄዎች"], [/\bquestions\b/g, "ጥያቄዎች"],
+    [/\bPractice\b/g, "ልምምድ"], [/\bpractice\b/g, "ልምምድ"], [/\bProgress\b/g, "እድገት"], [/\bprogress\b/g, "እድገት"], [/\bCloud\b/g, "ደመና"], [/\bcloud\b/g, "ደመና"], [/\bbrowser\b/g, "አሳሽ"],
+  ],
+};
+
+function replaceCourseTerms(value, replacements) {
+  if (typeof value === "string") return replacements.reduce((text, [pattern, replacement]) => text.replace(pattern, replacement), value);
+  if (Array.isArray(value)) return value.map((item) => replaceCourseTerms(item, replacements));
+  if (value && typeof value === "object") {
+    Object.keys(value).forEach((key) => {
+      value[key] = replaceCourseTerms(value[key], replacements);
+    });
+  }
+  return value;
+}
+
+Object.entries(courseTermReplacements).forEach(([language, replacements]) => {
+  if (fullCourses[language]) replaceCourseTerms(fullCourses[language], replacements);
+});
 const SUPABASE_URL = "https://byjxdmeousrepzjtgxvm.supabase.co";
 const SUPABASE_KEY = "sb_publishable_NIK7EwHsv-YeizMoiurj_g_Pn3pvQ-g";
 const supabaseClient = window.supabase?.createClient(SUPABASE_URL, SUPABASE_KEY);
@@ -1547,6 +1769,7 @@ function applyCourseLanguage() {
   const flag = control?.querySelector("[data-language-flag]");
   if (label) label.textContent = courseLanguages[language]?.label || "Language";
   if (flag) flag.textContent = languageFlags[language] || languageFlags.en;
+  if (flag) flag.dataset.languageCode = language;
   document.documentElement.lang = language === "en" ? "en" : language;
   document.body.dataset.courseLanguage = language;
   localStorage.setItem("courseLanguage", language);
@@ -1573,6 +1796,7 @@ function translateStaticCopy(copy) {
   document.querySelectorAll(".desktop-links a[href='exams.html']").forEach((node) => (node.textContent = copy.exams));
   setText("#resetProgress", copy.reset);
   setText("#signOutBtn", copy.signOut);
+  setText(".google-btn span:last-child", copy.signInGoogle);
   setText(".top-nav .primary-link", copy.startLearning);
   setText(".top-nav .secondary-link[href='exams.html']", copy.goToExams);
   setText(".top-nav .secondary-link[href='lessons.html']", copy.reviewLessons);
@@ -1662,6 +1886,7 @@ function getCourseTopic(topicKey) {
 function renderTopic(topicKey) {
   if (!els.topicTitle) return;
   const topic = getCourseTopic(topicKey);
+  const chrome = lessonChrome[getCourseLanguage()] || lessonChrome.en;
   state.topic = topicKey;
   state.examTopic = topicKey;
   if (els.examTopic) els.examTopic.value = topicKey;
@@ -1682,8 +1907,8 @@ function renderTopic(topicKey) {
   const languageHtml = renderLanguageBridge(topicKey);
   const examplesHtml = topic.examples
     ? `<section class="lesson-examples" aria-label="Lesson examples">
-        <p class="eyebrow">Examples</p>
-        <h3>Real sentences for this lesson</h3>
+        <p class="eyebrow">${chrome.examples}</p>
+        <h3>${chrome.realSentences}</h3>
         <div class="examples-list">${topic.examples
           .map(([spanish, english]) => `<div class="example-card"><strong>${spanish}</strong><p>${english}</p></div>`)
           .join("")}</div>
@@ -1704,7 +1929,7 @@ function renderTopic(topicKey) {
     : "";
   const checkpointHtml = topic.checkpoints
     ? `<section class="checkpoint-box lesson-checkpoints">
-        <strong>Checkpoints</strong>
+        <strong>${chrome.checkpoints}</strong>
         ${topic.checkpoints.map((checkpoint) => `<p>${checkpoint}</p>`).join("")}
       </section>`
     : "";
@@ -1721,16 +1946,16 @@ function renderTopic(topicKey) {
             </div>
             <p class="tense-use">${lesson.use}</p>
             <div class="tense-note">
-              <strong>Pronoun placement</strong>
+              <strong>${chrome.pronounPlacement}</strong>
               <p>${lesson.pronounNote}</p>
             </div>
             <div class="tense-guidance">
               <div>
-                <strong>What to avoid</strong>
+                <strong>${chrome.avoid}</strong>
                 <p>${lesson.avoid}</p>
               </div>
               <div>
-                <strong>Good practice</strong>
+                <strong>${chrome.goodPractice}</strong>
                 <p>${lesson.practice}</p>
               </div>
             </div>
@@ -1738,7 +1963,7 @@ function renderTopic(topicKey) {
               ${lesson.examples.map(([spanish, english]) => `<div><strong>${spanish}</strong><p>${english}</p></div>`).join("")}
             </div>
             <div class="checkpoint-box">
-              <strong>Checkpoints</strong>
+              <strong>${chrome.checkpoints}</strong>
               ${lesson.checkpoints.map((checkpoint) => `<p>${checkpoint}</p>`).join("")}
             </div>
           </article>`
