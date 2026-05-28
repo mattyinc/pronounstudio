@@ -553,6 +553,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 10px;
   margin: 0 auto;
   padding: 9px;
@@ -560,6 +561,18 @@ h1 {
   border-radius: 999px;
   background: color-mix(in srgb, var(--surface) 90%, transparent);
   box-shadow: var(--soft-shadow);
+}
+
+.topic-group-label {
+  align-self: stretch;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px 0 14px;
+  color: var(--soft);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .nav-item {
@@ -583,29 +596,44 @@ h1 {
   color: var(--ink);
 }
 
-.nav-item:nth-child(2).active,
-.nav-item:nth-child(2):hover {
+.nav-item:nth-of-type(2).active,
+.nav-item:nth-of-type(2):hover {
   background: var(--yellow-soft);
 }
 
-.nav-item:nth-child(3).active,
-.nav-item:nth-child(3):hover {
+.nav-item:nth-of-type(3).active,
+.nav-item:nth-of-type(3):hover {
   background: var(--orange-soft);
 }
 
-.nav-item:nth-child(4).active,
-.nav-item:nth-child(4):hover {
+.nav-item:nth-of-type(4).active,
+.nav-item:nth-of-type(4):hover {
   background: var(--green-soft);
 }
 
-.nav-item:nth-child(5).active,
-.nav-item:nth-child(5):hover {
+.nav-item:nth-of-type(5).active,
+.nav-item:nth-of-type(5):hover {
   background: var(--pink-soft);
 }
 
-.nav-item:nth-child(6).active,
-.nav-item:nth-child(6):hover {
+.nav-item:nth-of-type(6).active,
+.nav-item:nth-of-type(6):hover {
   background: var(--purple-soft);
+}
+
+.nav-item:nth-of-type(7).active,
+.nav-item:nth-of-type(7):hover {
+  background: var(--yellow-soft);
+}
+
+.nav-item:nth-of-type(8).active,
+.nav-item:nth-of-type(8):hover {
+  background: var(--green-soft);
+}
+
+.nav-item:nth-of-type(9).active,
+.nav-item:nth-of-type(9):hover {
+  background: var(--pink-soft);
 }
 
 .progress-strip {
@@ -1542,6 +1570,12 @@ h1 {
     font-size: 14px;
     white-space: nowrap;
     scroll-snap-align: start;
+  }
+
+  .topic-group-label {
+    flex: 0 0 auto;
+    min-height: 42px;
+    padding: 0 6px 0 10px;
   }
 
   .progress-strip {

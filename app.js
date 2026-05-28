@@ -343,8 +343,220 @@ const topics = {
       "Can you place the reflexive pronoun in both positions with voy a and estoy?",
     ],
   },
-  tenses: {
+  connectors: {
     kicker: "Lesson 06",
+    title: "Connectors in Mexican Spanish",
+    nav: "Connectors",
+    referenceTitle: "Connector map",
+    summary:
+      "Connectors make Spanish sound organized instead of sentence-by-sentence. They show addition, contrast, cause, result, time, condition, and opinion.",
+    pronouns: [
+      ["Addition", "ademas, tambien, incluso"],
+      ["Contrast", "pero, aunque, sin embargo"],
+      ["Cause", "porque, como, ya que"],
+      ["Result", "por eso, entonces, asi que"],
+      ["Order", "primero, luego, despues"],
+      ["Condition", "si, siempre que, a menos que"],
+    ],
+    placement:
+      "Put short connectors near the idea they connect. Use commas after longer openers: Sin embargo, no pude ir. Por eso, lo hice ayer.",
+    explanations: [
+      ["Deep mental model", "A connector tells the listener how to process the next idea: adding, contrasting, explaining, concluding, sequencing, or setting a condition."],
+      ["Everyday Mexican speech", "Pero, entonces, o sea, de hecho, por eso, aunque, mientras, and y luego are very common. Use them lightly; they should guide the sentence, not make it heavy."],
+      ["Formal vs natural", "Sin embargo and por lo tanto are useful in writing or careful speech. Pero, aun asi, por eso, and entonces usually sound more natural in conversation."],
+      ["Subjunctive warning", "Connectors like para que, antes de que, a menos que, con tal de que, and siempre que often trigger subjunctive when the action is uncertain or future-oriented."],
+      ["What to avoid", "Do not translate every English connector literally. 'Actually' is often de hecho or la verdad, not actualmente. Actualmente means currently."],
+      ["Good practice", "Write one plain sentence, then rewrite it five ways: add a reason, contrast it, give a result, set a condition, and place it in time."],
+    ],
+    examples: [
+      ["Quiero practicar mas, pero no tengo mucho tiempo.", "I want to practice more, but I do not have much time."],
+      ["No entendi la regla; por eso, la repase otra vez.", "I did not understand the rule, so I reviewed it again."],
+      ["Aunque estaba cansado, termine la leccion.", "Although I was tired, I finished the lesson."],
+      ["Te mando el audio para que lo escuches.", "I am sending you the audio so that you listen to it."],
+      ["Primero leo el ejemplo y luego hago el examen.", "First I read the example and then I take the exam."],
+      ["Como no habia internet, estudie con mis notas.", "Since there was no internet, I studied with my notes."],
+      ["Si tienes dudas, escribelas antes de avanzar.", "If you have doubts, write them before moving on."],
+      ["De hecho, esa frase suena muy natural en Mexico.", "In fact, that phrase sounds very natural in Mexico."],
+    ],
+    deepSections: [
+      {
+        title: "Contrast connectors",
+        body: "Use pero for a simple contrast. Use aunque when one idea does not stop the other. Use sin embargo when you want a more formal 'however'.",
+        examples: [
+          ["Quiero ir, pero no puedo.", "I want to go, but I cannot."],
+          ["Aunque llueva, voy.", "Even if it rains, I am going."],
+          ["Sin embargo, necesitamos practicar mas.", "However, we need to practice more."],
+        ],
+      },
+      {
+        title: "Cause and result",
+        body: "Porque gives the reason after the fact. Como often gives the reason at the beginning. Por eso and asi que introduce the result.",
+        examples: [
+          ["No fui porque estaba enfermo.", "I did not go because I was sick."],
+          ["Como estaba enfermo, no fui.", "Since I was sick, I did not go."],
+          ["Estaba enfermo, asi que no fui.", "I was sick, so I did not go."],
+        ],
+      },
+      {
+        title: "Connectors with subjunctive",
+        body: "When the connector points to a future, desired, uncertain, or dependent action, Spanish often uses subjunctive after que.",
+        examples: [
+          ["Te aviso cuando llegue.", "I will let you know when I arrive."],
+          ["Lo hago para que entiendas.", "I do it so that you understand."],
+          ["No salgas a menos que sea necesario.", "Do not leave unless it is necessary."],
+        ],
+      },
+    ],
+    checkpoints: [
+      "Can you choose pero, aunque, or sin embargo based on tone?",
+      "Can you distinguish porque from por eso?",
+      "Can you notice when a connector with que may need subjunctive?",
+    ],
+  },
+  adjectives: {
+    kicker: "Lesson 07",
+    title: "Adjectives in Mexican Spanish",
+    nav: "Adjectives",
+    referenceTitle: "Adjective map",
+    summary:
+      "Adjectives describe nouns, but Spanish makes you think about gender, number, position, and whether the quality is temporary, inherent, literal, or emotional.",
+    pronouns: [
+      ["Masculine singular", "carro rojo"],
+      ["Feminine singular", "casa roja"],
+      ["Masculine plural", "carros rojos"],
+      ["Feminine plural", "casas rojas"],
+      ["Before noun", "buen amigo, gran dia"],
+      ["After noun", "amigo bueno, dia largo"],
+    ],
+    placement:
+      "Most descriptive adjectives go after the noun: una clase dificil. Some common adjectives go before the noun or change meaning by position: un viejo amigo vs un amigo viejo.",
+    explanations: [
+      ["Agreement first", "An adjective usually agrees with the noun it describes, not with the speaker. La camisa es roja, even if the speaker is male."],
+      ["Adjectives ending in -e or consonant", "Many adjectives ending in -e do not change for gender: interesante, grande, amable. They still become plural: interesantes, grandes, amables."],
+      ["Position changes meaning", "After the noun is the normal descriptive position. Before the noun can feel subjective, emotional, evaluative, or set: una gran persona, mi pobre amigo."],
+      ["Ser vs estar with adjectives", "Use ser for identity or stable description: es alto, es mexicano. Use estar for condition, mood, location-like state, or result: esta cansado, esta limpio."],
+      ["What to avoid", "Do not put every adjective before the noun as in English. 'A red car' is un carro rojo, not usually un rojo carro. Also avoid forgetting plural -s on both noun and adjective."],
+      ["Good practice", "Practice noun-first thinking: noun, gender, number, adjective ending. Say: libro interesante, libros interesantes; clase interesante, clases interesantes."],
+    ],
+    examples: [
+      ["La comida esta deliciosa.", "The food is delicious right now / tastes delicious."],
+      ["Es una persona muy amable.", "He/she is a very kind person."],
+      ["Necesito una mochila grande.", "I need a big backpack."],
+      ["Fue un gran problema.", "It was a major problem."],
+      ["Es mi viejo amigo.", "He is my long-time friend."],
+      ["Es un amigo viejo.", "He is an old friend, older in age."],
+      ["Las clases son utiles pero exigentes.", "The classes are useful but demanding."],
+      ["Estoy listo para el examen.", "I am ready for the exam."],
+    ],
+    deepSections: [
+      {
+        title: "Agreement without panic",
+        body: "Start from the noun. If the noun is feminine plural, the adjective must usually be feminine plural too. If the adjective does not have a feminine form, it still takes plural.",
+        examples: [
+          ["el ejercicio dificil", "masculine singular"],
+          ["la pregunta dificil", "feminine singular, same form"],
+          ["las preguntas dificiles", "plural form required"],
+        ],
+      },
+      {
+        title: "Before or after the noun",
+        body: "After the noun normally classifies or describes. Before the noun often adds attitude, emphasis, or a known quality.",
+        examples: [
+          ["una ciudad grande", "a large city"],
+          ["una gran ciudad", "a great city"],
+          ["un hombre pobre", "a poor man with little money"],
+          ["mi pobre hermano", "my poor brother, emotional sympathy"],
+        ],
+      },
+      {
+        title: "Ser and estar",
+        body: "The same adjective can change meaning with ser and estar. Ser describes what something is like. Estar describes how something is, feels, looks, or ended up.",
+        examples: [
+          ["Es aburrido.", "He/it is boring."],
+          ["Esta aburrido.", "He is bored."],
+          ["Es bueno.", "He/it is good."],
+          ["Esta bueno.", "It tastes good / he is attractive, depending on context."],
+        ],
+      },
+    ],
+    checkpoints: [
+      "Can you make the adjective agree with the noun's gender and number?",
+      "Can you explain how un viejo amigo differs from un amigo viejo?",
+      "Can you choose ser or estar based on identity vs condition?",
+    ],
+  },
+  time: {
+    kicker: "Lesson 08",
+    title: "Time expressions in Mexican Spanish",
+    nav: "Time",
+    referenceTitle: "Time map",
+    summary:
+      "Time in Spanish is more than clock words. You need clock time, calendar time, duration, frequency, sequence, deadlines, and the difference between hace, desde, desde hace, and llevar.",
+    pronouns: [
+      ["Clock time", "a la una, a las ocho"],
+      ["Day part", "en la manana, por la tarde"],
+      ["Frequency", "siempre, seguido, a veces"],
+      ["Duration", "por dos horas"],
+      ["Since point", "desde enero"],
+      ["Ongoing time", "desde hace dos anos"],
+    ],
+    placement:
+      "Time phrases can go at the beginning or end. Beginning position frames the sentence: Ayer lo vi. End position feels neutral: Lo vi ayer.",
+    explanations: [
+      ["Clock time", "Use es la una for one o'clock and son las dos/tres/etc. Use a la/las for at a time: La clase es a las seis."],
+      ["Hace for ago", "Use hace + time for ago: Lo compre hace dos dias. The event is usually completed in the past."],
+      ["Desde and desde hace", "Desde points to a starting point: desde enero. Desde hace gives an ongoing duration: estudio espanol desde hace seis meses."],
+      ["Llevar + time + gerund", "Llevo seis meses estudiando espanol means I have been studying Spanish for six months and still am."],
+      ["What to avoid", "Do not translate 'for' automatically as por. For ongoing time, desde hace or llevar often sounds much better than por."],
+      ["Good practice", "For each sentence, ask: Is this a clock time, a past point, a duration, an ongoing duration, or a frequency? Then choose the time phrase."],
+    ],
+    examples: [
+      ["Son las ocho y media.", "It is eight thirty."],
+      ["La clase empieza a las siete.", "The class starts at seven."],
+      ["Lo vi ayer en la tarde.", "I saw him/it yesterday afternoon."],
+      ["Compre el libro hace una semana.", "I bought the book a week ago."],
+      ["Estudio espanol desde enero.", "I have studied Spanish since January."],
+      ["Estudio espanol desde hace seis meses.", "I have studied Spanish for six months."],
+      ["Llevo seis meses estudiando espanol.", "I have been studying Spanish for six months."],
+      ["A veces practico antes de dormir.", "Sometimes I practice before sleeping."],
+    ],
+    deepSections: [
+      {
+        title: "Ago vs ongoing for",
+        body: "Hace looks backward to when something happened. Desde hace and llevar describe something that started before and continues now.",
+        examples: [
+          ["Llegue hace diez minutos.", "I arrived ten minutes ago."],
+          ["Vivo aqui desde hace dos anos.", "I have lived here for two years."],
+          ["Llevo dos anos viviendo aqui.", "I have been living here for two years."],
+        ],
+      },
+      {
+        title: "Por and para with time",
+        body: "Por often describes approximate duration or a stretch of time. Para points to a deadline or target time.",
+        examples: [
+          ["Estudie por dos horas.", "I studied for two hours."],
+          ["Lo necesito para manana.", "I need it by/for tomorrow."],
+          ["La tarea es para el viernes.", "The homework is due for Friday."],
+        ],
+      },
+      {
+        title: "Sequence words",
+        body: "Use sequence words to make your Spanish easy to follow. Primero starts, luego/despues moves forward, al final closes the sequence.",
+        examples: [
+          ["Primero leo la regla.", "First I read the rule."],
+          ["Luego hago ejemplos.", "Then I do examples."],
+          ["Al final tomo el examen.", "At the end I take the exam."],
+        ],
+      },
+    ],
+    checkpoints: [
+      "Can you say the clock time with es la una and son las...?",
+      "Can you distinguish hace dos dias from desde hace dos dias?",
+      "Can you use llevar + time + gerund for an action still continuing?",
+    ],
+  },
+  tenses: {
+    kicker: "Lesson 09",
     title: "The top 12 Spanish tenses",
     nav: "Tenses",
     summary:
@@ -901,6 +1113,48 @@ const examTopics = {
       ["bañarse", "estoy bañándome", "Yo ___ ahora.", "Yo estoy bañándome ahora.", "I am bathing now.", "Yo estoy me bañando ahora."],
     ],
   },
+  connectors: {
+    label: "Connectors",
+    focus: "Spanish connectors",
+    seeds: [
+      ["contrast", "pero", "Quiero ir, ___ no puedo.", "Quiero ir, pero no puedo.", "I want to go, but I cannot.", "Quiero ir, porque no puedo."],
+      ["result", "por eso", "No entendi la regla; ___ la repase.", "No entendi la regla; por eso la repase.", "I did not understand the rule, so I reviewed it.", "No entendi la regla; porque la repase."],
+      ["cause", "porque", "No fui ___ estaba enfermo.", "No fui porque estaba enfermo.", "I did not go because I was sick.", "No fui por eso estaba enfermo."],
+      ["although", "aunque", "___ estaba cansado, termine.", "Aunque estaba cansado, termine.", "Although I was tired, I finished.", "Pero estaba cansado, termine."],
+      ["purpose", "para que", "Te lo explico ___ lo entiendas.", "Te lo explico para que lo entiendas.", "I explain it so that you understand it.", "Te lo explico porque lo entiendas."],
+      ["sequence", "luego", "Primero leo; ___ practico.", "Primero leo; luego practico.", "First I read; then I practice.", "Primero leo; aunque practico."],
+      ["condition", "si", "___ tienes dudas, pregunta.", "Si tienes dudas, pregunta.", "If you have questions, ask.", "Porque tienes dudas, pregunta."],
+      ["fact", "de hecho", "___, esa frase suena natural.", "De hecho, esa frase suena natural.", "In fact, that phrase sounds natural.", "Actualmente, esa frase suena natural."],
+    ],
+  },
+  adjectives: {
+    label: "Adjectives",
+    focus: "Spanish adjectives",
+    seeds: [
+      ["feminine singular", "roja", "La camisa es ___.", "La camisa es roja.", "The shirt is red.", "La camisa es rojo."],
+      ["masculine plural", "rojos", "Los carros son ___.", "Los carros son rojos.", "The cars are red.", "Los carros son rojas."],
+      ["gender-neutral ending", "interesantes", "Las clases son ___.", "Las clases son interesantes.", "The classes are interesting.", "Las clases son interesanta."],
+      ["normal placement", "mochila grande", "Necesito una ___.", "Necesito una mochila grande.", "I need a big backpack.", "Necesito una grande mochila."],
+      ["meaning by position", "viejo amigo", "Es mi ___.", "Es mi viejo amigo.", "He is my long-time friend.", "Es mi amigo viejo."],
+      ["ser", "es amable", "Ella ___.", "Ella es amable.", "She is kind.", "Ella esta amable."],
+      ["estar", "esta cansado", "El ___ hoy.", "El esta cansado hoy.", "He is tired today.", "El es cansado hoy."],
+      ["plural agreement", "preguntas dificiles", "Son ___.", "Son preguntas dificiles.", "They are difficult questions.", "Son preguntas dificil."],
+    ],
+  },
+  time: {
+    label: "Time",
+    focus: "Spanish time expressions",
+    seeds: [
+      ["clock time", "son las", "___ ocho y media.", "Son las ocho y media.", "It is eight thirty.", "Es las ocho y media."],
+      ["one o'clock", "es la", "___ una.", "Es la una.", "It is one o'clock.", "Son la una."],
+      ["at time", "a las", "La clase empieza ___ siete.", "La clase empieza a las siete.", "The class starts at seven.", "La clase empieza en las siete."],
+      ["ago", "hace", "Lo compre ___ una semana.", "Lo compre hace una semana.", "I bought it a week ago.", "Lo compre desde una semana."],
+      ["since point", "desde", "Estudio espanol ___ enero.", "Estudio espanol desde enero.", "I have studied Spanish since January.", "Estudio espanol por enero."],
+      ["ongoing duration", "desde hace", "Estudio espanol ___ seis meses.", "Estudio espanol desde hace seis meses.", "I have studied Spanish for six months.", "Estudio espanol hace seis meses."],
+      ["carrying duration", "llevo", "___ seis meses estudiando.", "Llevo seis meses estudiando.", "I have been studying for six months.", "Tengo seis meses estudiando."],
+      ["deadline", "para", "Lo necesito ___ manana.", "Lo necesito para manana.", "I need it by tomorrow.", "Lo necesito por manana."],
+    ],
+  },
   tenses: {
     label: "Tenses",
     focus: "Spanish tenses",
@@ -1204,7 +1458,7 @@ function renderTopic(topicKey) {
   els.topicKicker.textContent = topic.kicker;
   els.topicTitle.textContent = topic.title;
   els.topicSummary.textContent = topic.summary;
-  if (els.referenceTitle) els.referenceTitle.textContent = topicKey === "tenses" ? "Tense map" : "Pronoun map";
+  if (els.referenceTitle) els.referenceTitle.textContent = topic.referenceTitle || (topicKey === "tenses" ? "Tense map" : "Pronoun map");
   els.placementRule.textContent = topic.placement;
 
   const explanationHtml = topic.explanations
