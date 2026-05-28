@@ -1179,6 +1179,7 @@ const questionTypes = ["MCQ", "Spanish to English", "English to Spanish", "Corre
 const genericDistractors = ["Lo veo.", "Le mandé un mensaje.", "Se lo dije.", "Me levanto temprano.", "Te lo voy a mandar.", "Quiero que lo hagas."];
 const courseLanguages = window.courseLanguages || { en: { name: "English", label: "Language" } };
 const languageFlags = { en: "🇺🇸", hi: "🇮🇳", ta: "🇮🇳", bn: "🇧🇩", am: "🇪🇹" };
+const fullCourses = window.fullCourses || {};
 const staticCopy = {
   en: {
     lessons: "Lessons",
@@ -1622,14 +1623,16 @@ function translateStaticCopy(copy) {
 
 function renderLanguageBridge(topicKey) {
   const language = getCourseLanguage();
+  if (fullCourses[language]?.topics?.[topicKey]) return "";
   if (language === "en") return "";
   const pack = courseLanguages[language];
   const guide = pack?.guides?.[topicKey];
   if (!guide) return "";
   const labels = [pack.core, pack.use, pack.avoid, pack.practice, pack.example];
+  const baseTopic = topics[topicKey];
   return `<section class="language-bridge" aria-label="${pack.bridgeKicker}">
     <p class="eyebrow">${pack.bridgeKicker}</p>
-    <h3>${topics[topicKey].title}</h3>
+    <h3>${baseTopic.title}</h3>
     <p>${guide[0]}</p>
     <div class="language-bridge-grid">
       ${guide
@@ -1640,9 +1643,14 @@ function renderLanguageBridge(topicKey) {
   </section>`;
 }
 
+function getCourseTopic(topicKey) {
+  const language = getCourseLanguage();
+  return fullCourses[language]?.topics?.[topicKey] || topics[topicKey];
+}
+
 function renderTopic(topicKey) {
   if (!els.topicTitle) return;
-  const topic = topics[topicKey];
+  const topic = getCourseTopic(topicKey);
   state.topic = topicKey;
   state.examTopic = topicKey;
   if (els.examTopic) els.examTopic.value = topicKey;
