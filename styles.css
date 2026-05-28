@@ -242,6 +242,35 @@ a {
   box-shadow: var(--soft-shadow);
 }
 
+.language-control {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  padding: 0 9px 0 13px;
+}
+
+.language-control span {
+  color: var(--soft);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.language-control select {
+  min-width: 112px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  outline: 0;
+}
+
 .auth-status {
   max-width: 140px;
   overflow: hidden;
@@ -331,6 +360,55 @@ a {
 
 .save-notice.signed-in h2::after {
   content: " Saved to cloud";
+}
+
+.language-bridge {
+  margin: 26px 0 30px;
+  padding: 24px;
+  border: 1px solid color-mix(in srgb, var(--teal) 22%, var(--line));
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--teal-soft) 58%, transparent), transparent 58%),
+    var(--surface);
+  box-shadow: var(--soft-shadow);
+}
+
+.language-bridge h3 {
+  margin: 6px 0 10px;
+  color: var(--ink);
+  font-family: var(--display-font);
+  font-size: clamp(25px, 4vw, 40px);
+  font-weight: 500;
+}
+
+.language-bridge p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.language-bridge-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.language-bridge-grid div {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+  padding: 15px;
+}
+
+.language-bridge-grid strong {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--ink);
+}
+
+.language-bridge-grid span {
+  color: var(--muted);
+  line-height: 1.65;
 }
 
 .theme-icon {
@@ -1603,6 +1681,7 @@ h1 {
   .value-row article,
   .reference-sheet,
   .deep-lesson-card,
+  .language-bridge,
   .tense-lesson,
   .example-card,
   .question-card {
@@ -1613,6 +1692,10 @@ h1 {
   .lesson-stage {
     gap: 36px;
     margin-bottom: 80px;
+  }
+
+  .language-bridge-grid {
+    grid-template-columns: 1fr;
   }
 
   .lesson-copy h2,
@@ -1713,6 +1796,20 @@ h1 {
     padding: 0;
   }
 
+  .language-control {
+    min-width: 76px;
+    padding: 0 8px;
+  }
+
+  .language-control span {
+    display: none;
+  }
+
+  .language-control select {
+    min-width: 62px;
+    font-size: 12px;
+  }
+
   .brand span:last-child {
     font-size: 17px;
   }
@@ -1739,6 +1836,7 @@ h1 {
   .value-row article,
   .reference-sheet,
   .deep-lesson-card,
+  .language-bridge,
   .tense-lesson,
   .example-card,
   .question-card {

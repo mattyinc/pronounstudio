@@ -27,6 +27,16 @@
         <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
           <span class="theme-icon" aria-hidden="true"></span>
         </button>
+        <label class="language-control" aria-label="Course language">
+          <span>Language</span>
+          <select id="courseLanguage">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="ta">Tamil</option>
+            <option value="bn">Bangla</option>
+            <option value="am">Amharic</option>
+          </select>
+        </label>
         <button id="signInBtn" class="google-btn" type="button">
           <img class="google-mark" src="assets/google-g-logo.svg" alt="" aria-hidden="true" />
           <span>Sign in with Google</span>
@@ -102,6 +112,7 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="assets/course-languages.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

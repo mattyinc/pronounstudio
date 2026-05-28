@@ -1177,6 +1177,7 @@ const examTopics = {
 
 const questionTypes = ["MCQ", "Spanish to English", "English to Spanish", "Correct the Error", "Fill in the Blank"];
 const genericDistractors = ["Lo veo.", "Le mandé un mensaje.", "Se lo dije.", "Me levanto temprano.", "Te lo voy a mandar.", "Quiero que lo hagas."];
+const courseLanguages = window.courseLanguages || { en: { name: "English", label: "Language" } };
 const SUPABASE_URL = "https://byjxdmeousrepzjtgxvm.supabase.co";
 const SUPABASE_KEY = "sb_publishable_NIK7EwHsv-YeizMoiurj_g_Pn3pvQ-g";
 const supabaseClient = window.supabase?.createClient(SUPABASE_URL, SUPABASE_KEY);
@@ -1280,6 +1281,7 @@ const state = {
   correct: Number(localStorage.getItem("correct") || 0),
   streak: Number(localStorage.getItem("streak") || 0),
   misses: JSON.parse(localStorage.getItem("misses") || "{}"),
+  courseLanguage: localStorage.getItem("courseLanguage") || "en",
 };
 
 const els = {
@@ -1311,6 +1313,7 @@ const els = {
   examMeta: document.getElementById("examMeta"),
   themeToggle: document.getElementById("themeToggle"),
   themeText: document.getElementById("themeText"),
+  courseLanguage: document.getElementById("courseLanguage"),
   signInBtn: document.getElementById("signInBtn"),
   signOutBtn: document.getElementById("signOutBtn"),
   authStatus: document.getElementById("authStatus"),
@@ -1336,6 +1339,7 @@ function getProgressSnapshot() {
     examLevel: state.examLevel,
     lessonTopic: state.topic,
     theme: document.body.dataset.theme || "light",
+    courseLanguage: state.courseLanguage,
   };
 }
 
@@ -1348,7 +1352,9 @@ function applyProgressSnapshot(progress) {
   state.misses = progress.misses || {};
   state.examTopic = progress.examTopic || progress.lessonTopic || state.examTopic || "direct";
   state.examLevel = Number(progress.examLevel || state.examLevel || 1);
+  state.courseLanguage = progress.courseLanguage || state.courseLanguage || "en";
   if (progress.theme) setTheme(progress.theme);
+  applyCourseLanguage();
   if (els.examTopic) els.examTopic.value = state.examTopic;
   if (els.examLevel) els.examLevel.value = String(state.examLevel);
   saveProgress();
@@ -1444,6 +1450,40 @@ async function initAuth() {
   });
 }
 
+function getCourseLanguage() {
+  return courseLanguages[state.courseLanguage] ? state.courseLanguage : "en";
+}
+
+function applyCourseLanguage() {
+  const language = getCourseLanguage();
+  state.courseLanguage = language;
+  if (els.courseLanguage) els.courseLanguage.value = language;
+  const label = els.courseLanguage?.closest(".language-control")?.querySelector("span");
+  if (label) label.textContent = courseLanguages[language]?.label || "Language";
+  document.documentElement.lang = language === "en" ? "en" : language;
+  localStorage.setItem("courseLanguage", language);
+}
+
+function renderLanguageBridge(topicKey) {
+  const language = getCourseLanguage();
+  if (language === "en") return "";
+  const pack = courseLanguages[language];
+  const guide = pack?.guides?.[topicKey];
+  if (!guide) return "";
+  const labels = [pack.core, pack.use, pack.avoid, pack.practice, pack.example];
+  return `<section class="language-bridge" aria-label="${pack.bridgeKicker}">
+    <p class="eyebrow">${pack.bridgeKicker}</p>
+    <h3>${topics[topicKey].title}</h3>
+    <p>${guide[0]}</p>
+    <div class="language-bridge-grid">
+      ${guide
+        .slice(1)
+        .map((item, index) => `<div><strong>${labels[index + 1] || pack.core}</strong><span>${item}</span></div>`)
+        .join("")}
+    </div>
+  </section>`;
+}
+
 function renderTopic(topicKey) {
   if (!els.topicTitle) return;
   const topic = topics[topicKey];
@@ -1464,6 +1504,7 @@ function renderTopic(topicKey) {
   const explanationHtml = topic.explanations
     .map(([heading, body]) => `<div class="explanation"><h3>${heading}</h3><p>${body}</p></div>`)
     .join("");
+  const languageHtml = renderLanguageBridge(topicKey);
   const examplesHtml = topic.examples
     ? `<section class="lesson-examples" aria-label="Lesson examples">
         <p class="eyebrow">Examples</p>
@@ -1529,7 +1570,7 @@ function renderTopic(topicKey) {
         )
         .join("")}</div>`
     : "";
-  els.explanationBlocks.innerHTML = explanationHtml + deepHtml + examplesHtml + checkpointHtml + tenseHtml;
+  els.explanationBlocks.innerHTML = languageHtml + explanationHtml + deepHtml + examplesHtml + checkpointHtml + tenseHtml;
 
   els.pronounTable.innerHTML = topic.pronouns
     .map(([pronoun, meaning]) => `<div class="pronoun-row"><span>${pronoun}</span><strong>${meaning}</strong></div>`)
@@ -1627,6 +1668,7 @@ function saveProgress() {
   localStorage.setItem("examTopic", state.examTopic);
   localStorage.setItem("examLevel", String(state.examLevel));
   localStorage.setItem("lessonTopic", state.topic);
+  localStorage.setItem("courseLanguage", state.courseLanguage);
   scheduleCloudSave();
 }
 
@@ -1675,6 +1717,14 @@ if (els.themeToggle) {
     saveProgress();
   });
 }
+if (els.courseLanguage) {
+  els.courseLanguage.addEventListener("change", () => {
+    state.courseLanguage = els.courseLanguage.value;
+    applyCourseLanguage();
+    renderTopic(state.topic || state.examTopic);
+    saveProgress();
+  });
+}
 if (els.signInBtn) els.signInBtn.addEventListener("click", signInWithGoogle);
 if (els.signOutBtn) els.signOutBtn.addEventListener("click", signOut);
 if (els.resetProgress) {
@@ -1684,6 +1734,7 @@ if (els.resetProgress) {
 }
 
 setTheme(localStorage.getItem("theme") === "dark" ? "dark" : "light");
+applyCourseLanguage();
 if (els.examTopic) els.examTopic.value = state.examTopic;
 if (els.examLevel) els.examLevel.value = String(state.examLevel);
 renderTopic(state.examTopic);
