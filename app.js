@@ -1365,6 +1365,19 @@ function saveProgress() {
   scheduleCloudSave();
 }
 
+async function resetProgress() {
+  state.answered = 0;
+  state.correct = 0;
+  state.streak = 0;
+  state.misses = {};
+  state.examTopic = els.examTopic?.value || state.examTopic || "direct";
+  state.examLevel = Number(els.examLevel?.value || state.examLevel || 1);
+  saveProgress();
+  renderProgress();
+  if (els.answerOptions) startExam();
+  await saveCloudProgress();
+}
+
 els.nav.forEach((button) => {
   button.addEventListener("click", () => renderTopic(button.dataset.topic));
 });
@@ -1401,13 +1414,7 @@ if (els.signInBtn) els.signInBtn.addEventListener("click", signInWithGoogle);
 if (els.signOutBtn) els.signOutBtn.addEventListener("click", signOut);
 if (els.resetProgress) {
   els.resetProgress.addEventListener("click", () => {
-    state.answered = 0;
-    state.correct = 0;
-    state.streak = 0;
-    state.misses = {};
-    saveProgress();
-    renderProgress();
-    startExam();
+    resetProgress();
   });
 }
 
