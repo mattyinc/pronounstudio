@@ -27,17 +27,20 @@
         <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
           <span class="theme-icon" aria-hidden="true"></span>
         </button>
-        <label class="language-control" aria-label="Course language">
-          <span class="language-flag" data-language-flag aria-hidden="true">🇺🇸</span>
-          <span class="language-label">Language</span>
-          <select id="courseLanguage">
+        <div class="language-control" aria-label="Course language">
+          <button class="language-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+            <span class="language-flag" data-language-flag data-language-code="en" aria-hidden="true"></span>
+            <span class="language-code" data-language-code-label>EN</span>
+          </button>
+          <div class="language-menu" role="listbox" aria-label="Course language"></div>
+          <select id="courseLanguage" class="language-native" aria-hidden="true" tabindex="-1">
             <option value="en">EN</option>
             <option value="hi">HI</option>
             <option value="ta">TA</option>
             <option value="bn">BN</option>
             <option value="am">AM</option>
           </select>
-        </label>
+        </div>
         <button id="signInBtn" class="google-btn" type="button">
           <img class="google-mark" src="assets/google-g-logo.svg" alt="" aria-hidden="true" />
           <span>Sign in with Google</span>

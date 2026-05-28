@@ -295,17 +295,36 @@ a .latin-text {
 }
 
 .language-control {
-  min-height: 38px;
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  border: 1px solid color-mix(in srgb, var(--teal) 20%, var(--line));
+}
+
+.language-trigger {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid color-mix(in srgb, var(--teal) 24%, var(--line));
   border-radius: 999px;
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--teal-soft) 48%, transparent), transparent 64%),
+    linear-gradient(135deg, color-mix(in srgb, var(--teal-soft) 58%, transparent), transparent 72%),
     var(--surface);
-  padding: 4px 8px 4px 5px;
-  box-shadow: 0 12px 28px rgba(33, 44, 40, 0.07);
+  padding: 5px 12px 5px 6px;
+  color: var(--ink);
+  box-shadow: 0 14px 34px rgba(33, 44, 40, 0.08);
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.language-trigger:hover,
+.language-control.open .language-trigger {
+  border-color: color-mix(in srgb, var(--teal) 54%, var(--line));
+  box-shadow: 0 18px 38px rgba(33, 44, 40, 0.12);
+}
+
+.language-trigger:active {
+  transform: translateY(1px);
 }
 
 .language-flag {
@@ -354,29 +373,84 @@ a .latin-text {
   background: linear-gradient(180deg, #078930 0 33%, #fcd116 33% 66%, #da121a 66%);
 }
 
-.language-label {
-  display: none;
-  color: var(--soft);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+.language-code {
+  min-width: 24px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
 }
 
-.language-control select {
-  width: auto;
-  min-width: 42px;
-  max-width: 52px;
+.language-native {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.language-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 40;
+  width: 178px;
+  display: grid;
+  gap: 4px;
+  padding: 8px;
+  border: 1px solid color-mix(in srgb, var(--teal) 22%, var(--line));
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--surface) 92%, var(--teal-soft)), var(--surface));
+  box-shadow: 0 24px 64px rgba(33, 44, 40, 0.16);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px) scale(0.98);
+  transform-origin: top right;
+  transition: opacity 170ms ease, transform 170ms ease, visibility 170ms ease;
+}
+
+.language-control.open .language-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.language-option {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
   border: 0;
+  border-radius: 12px;
   background: transparent;
+  padding: 8px;
   color: var(--ink);
-  font: inherit;
-  font-size: 14px;
-  font-weight: 600;
-  text-align: center;
-  outline: 0;
-  appearance: none;
+  text-align: left;
   cursor: pointer;
+}
+
+.language-option:hover,
+.language-option.active {
+  background: color-mix(in srgb, var(--teal-soft) 58%, transparent);
+}
+
+.language-option strong,
+.language-option small {
+  display: block;
+  line-height: 1.15;
+}
+
+.language-option strong {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.language-option small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
 }
 
 .auth-status {
@@ -439,12 +513,8 @@ a .latin-text {
     gap: 22px;
   }
 
-  .language-label {
-    display: none;
-  }
-
-  .language-control select {
-    max-width: 86px;
+  .language-menu {
+    right: -12px;
   }
 
   .google-btn {
@@ -1942,13 +2012,9 @@ h1 {
     padding: 0;
   }
 
-  .language-control {
-    min-width: 70px;
-    padding: 0 8px;
-  }
-
-  .language-label {
-    display: none;
+  .language-trigger {
+    min-height: 40px;
+    padding: 5px 10px 5px 5px;
   }
 
   .language-flag {
@@ -1957,8 +2023,7 @@ h1 {
     font-size: 0;
   }
 
-  .language-control select {
-    min-width: 34px;
+  .language-code {
     font-size: 12px;
   }
 

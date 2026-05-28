@@ -1180,6 +1180,7 @@ const genericDistractors = ["Lo veo.", "Le mandé un mensaje.", "Se lo dije.", "
 const courseLanguages = window.courseLanguages || { en: { name: "English", label: "Language" } };
 const languageFlags = { en: "🇺🇸", hi: "🇮🇳", ta: "🇮🇳", bn: "🇧🇩", am: "🇪🇹" };
 const languageCodes = { en: "EN", hi: "HI", ta: "TA", bn: "BN", am: "AM" };
+const languageNativeNames = { en: "English", hi: "हिंदी", ta: "தமிழ்", bn: "বাংলা", am: "አማርኛ" };
 const fullCourses = window.fullCourses || {};
 const staticCopy = {
   en: {
@@ -1618,6 +1619,9 @@ const els = {
   themeToggle: document.getElementById("themeToggle"),
   themeText: document.getElementById("themeText"),
   courseLanguage: document.getElementById("courseLanguage"),
+  languageControl: document.querySelector(".language-control"),
+  languageTrigger: document.querySelector(".language-trigger"),
+  languageMenu: document.querySelector(".language-menu"),
   signInBtn: document.getElementById("signInBtn"),
   signOutBtn: document.getElementById("signOutBtn"),
   authStatus: document.getElementById("authStatus"),
@@ -1760,23 +1764,54 @@ function getCourseLanguage() {
   return courseLanguages[state.courseLanguage] ? state.courseLanguage : "en";
 }
 
+function setLanguageMenuOpen(isOpen) {
+  if (!els.languageControl || !els.languageTrigger) return;
+  els.languageControl.classList.toggle("open", isOpen);
+  els.languageTrigger.setAttribute("aria-expanded", String(isOpen));
+}
+
+function selectCourseLanguage(language) {
+  state.courseLanguage = courseLanguages[language] ? language : "en";
+  if (els.courseLanguage) els.courseLanguage.value = state.courseLanguage;
+  applyCourseLanguage();
+  renderTopic(state.topic || state.examTopic);
+  saveProgress();
+}
+
+function renderLanguageMenu() {
+  if (!els.languageMenu) return;
+  const activeLanguage = getCourseLanguage();
+  els.languageMenu.innerHTML = Object.keys(languageCodes)
+    .map((language) => {
+      const code = languageCodes[language];
+      const name = courseLanguages[language]?.name || code;
+      const nativeName = languageNativeNames[language] || name;
+      return `<button class="language-option${language === activeLanguage ? " active" : ""}" type="button" role="option" aria-selected="${language === activeLanguage}" data-language="${language}">
+        <span class="language-flag" data-language-code="${language}" aria-hidden="true"></span>
+        <span><strong>${code}</strong><small>${nativeName}</small></span>
+      </button>`;
+    })
+    .join("");
+}
+
 function applyCourseLanguage() {
   const language = getCourseLanguage();
   const copy = staticCopy[language] || staticCopy.en;
   state.courseLanguage = language;
   if (els.courseLanguage) els.courseLanguage.value = language;
   const control = els.courseLanguage?.closest(".language-control");
-  const label = control?.querySelector(".language-label");
   const flag = control?.querySelector("[data-language-flag]");
+  const codeLabel = control?.querySelector("[data-language-code-label]");
   els.courseLanguage?.querySelectorAll("option").forEach((option) => {
     const code = languageCodes[option.value] || option.value.toUpperCase();
     option.textContent = code;
     option.title = courseLanguages[option.value]?.name || code;
   });
-  if (label) label.textContent = courseLanguages[language]?.label || "Language";
   if (flag) flag.textContent = languageFlags[language] || languageFlags.en;
   if (flag) flag.dataset.languageCode = language;
+  if (codeLabel) codeLabel.textContent = languageCodes[language] || language.toUpperCase();
   if (control) control.title = `Course language: ${courseLanguages[language]?.name || languageCodes[language] || language}`;
+  renderLanguageMenu();
   document.documentElement.lang = language === "en" ? "en" : language;
   document.body.dataset.courseLanguage = language;
   localStorage.setItem("courseLanguage", language);
@@ -2165,12 +2200,28 @@ if (els.themeToggle) {
 }
 if (els.courseLanguage) {
   els.courseLanguage.addEventListener("change", () => {
-    state.courseLanguage = els.courseLanguage.value;
-    applyCourseLanguage();
-    renderTopic(state.topic || state.examTopic);
-    saveProgress();
+    selectCourseLanguage(els.courseLanguage.value);
   });
 }
+if (els.languageTrigger) {
+  els.languageTrigger.addEventListener("click", () => {
+    setLanguageMenuOpen(!els.languageControl?.classList.contains("open"));
+  });
+}
+if (els.languageMenu) {
+  els.languageMenu.addEventListener("click", (event) => {
+    const option = event.target.closest("[data-language]");
+    if (!option) return;
+    selectCourseLanguage(option.dataset.language);
+    setLanguageMenuOpen(false);
+  });
+}
+document.addEventListener("click", (event) => {
+  if (!els.languageControl?.contains(event.target)) setLanguageMenuOpen(false);
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") setLanguageMenuOpen(false);
+});
 if (els.signInBtn) els.signInBtn.addEventListener("click", signInWithGoogle);
 if (els.signOutBtn) els.signOutBtn.addEventListener("click", signOut);
 if (els.resetProgress) {
