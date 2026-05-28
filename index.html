@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mexican Spanish Pronoun Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top-nav">
+      <a class="brand" href="index.html" aria-label="Pronoun Studio home">
+        <span class="brand-mark">ES</span>
+        <span>Pronoun Studio</span>
+      </a>
+
+      <nav class="desktop-links" aria-label="Page sections">
+        <a href="lessons.html">Lessons</a>
+        <a href="exams.html">Exams</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+        <a class="primary-link" href="lessons.html">Start learning</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Mexican Spanish Grammar</p>
+          <h1>Understand pronouns without the noise.</h1>
+          <p class="hero-text">
+            A spacious learning studio with deep lessons, focused examples, checkpoints, and level-based exams.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-link" href="lessons.html">Open lessons</a>
+            <a class="secondary-link" href="exams.html">Choose an exam</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="shape-grid">
+            <span class="tile tile-blue"></span>
+            <span class="tile tile-photo">lo</span>
+            <span class="tile tile-orange"></span>
+            <span class="tile tile-yellow">se</span>
+            <span class="tile tile-teal"></span>
+            <span class="tile tile-photo">le</span>
+            <span class="tile tile-pink"></span>
+            <span class="tile tile-purple">nos</span>
+          </div>
+          <div class="stat-card stat-one">
+            <strong>6</strong>
+            <span>lesson topics</span>
+          </div>
+          <div class="stat-card stat-two">
+            <strong id="heroMastery">0%</strong>
+            <span>mastery</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="value-row" aria-label="Learning method">
+        <article>
+          <span class="mini-icon icon-teal"></span>
+          <h2>Lessons page</h2>
+          <p>Study one topic at a time with deep explanations, examples, tense modules, and checkpoints.</p>
+        </article>
+        <article>
+          <span class="mini-icon icon-yellow"></span>
+          <h2>Exams page</h2>
+          <p>Select a topic and level, then work through mixed question types built for mastery.</p>
+        </article>
+        <article>
+          <span class="mini-icon icon-pink"></span>
+          <h2>Progress memory</h2>
+          <p>Your streak, attempts, theme, and selected exam persist locally as you move between pages.</p>
+        </article>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

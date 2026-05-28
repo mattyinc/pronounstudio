@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exams - Pronoun Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top-nav">
+      <a class="brand" href="index.html" aria-label="Pronoun Studio home">
+        <span class="brand-mark">ES</span>
+        <span>Pronoun Studio</span>
+      </a>
+
+      <nav class="desktop-links" aria-label="Page sections">
+        <a href="lessons.html">Lessons</a>
+        <a href="exams.html">Exams</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+        <button id="resetProgress" class="plain-btn" type="button">Reset</button>
+        <a class="secondary-link" href="lessons.html">Review lessons</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <p class="eyebrow">Exam studio</p>
+        <h1>Choose the exam you want to take.</h1>
+        <p class="hero-text">Every topic has five levels and each level contains at least forty mixed questions.</p>
+      </section>
+
+      <section class="quiz-section standalone-quiz" id="quizPanel">
+        <div class="quiz-intro">
+          <p class="eyebrow">Progress</p>
+          <h2>Practice until it feels automatic.</h2>
+          <div class="quiz-stats">
+            <span id="streakText">Streak 0</span>
+            <span id="attemptText">0 answered</span>
+          </div>
+        </div>
+
+        <div class="exam-shell">
+          <div class="exam-controls" aria-label="Exam settings">
+            <label>
+              Topic
+              <select id="examTopic">
+                <option value="direct">Direct objects</option>
+                <option value="indirect">Indirect objects</option>
+                <option value="combo">Double pronouns</option>
+                <option value="reflexive">Reflexive pronouns</option>
+                <option value="verbs">Reflexive verbs</option>
+                <option value="tenses">Tenses</option>
+              </select>
+            </label>
+            <label>
+              Level
+              <select id="examLevel">
+                <option value="1">Level 1 - Foundations</option>
+                <option value="2">Level 2 - Recognition</option>
+                <option value="3">Level 3 - Placement</option>
+                <option value="4">Level 4 - Production</option>
+                <option value="5">Level 5 - Mixed mastery</option>
+              </select>
+            </label>
+            <button id="startExam" class="secondary-link" type="button">Start exam</button>
+          </div>
+          <p id="examMeta" class="exam-meta">Each topic has 5 levels. Every level contains at least 40 mixed questions.</p>
+
+          <div class="question-card">
+            <div class="question-meta">
+              <span id="questionTopic">Direct objects</span>
+              <span id="questionType">Choose the pronoun</span>
+            </div>
+            <h3 id="questionText"></h3>
+            <div id="answerOptions" class="answer-options"></div>
+            <div id="feedback" class="feedback" aria-live="polite"></div>
+            <div class="quiz-controls">
+              <button id="nextQuestion" class="primary-btn" type="button" disabled>Next question</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
