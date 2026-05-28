@@ -234,21 +234,52 @@ a {
 }
 
 .theme-toggle {
-  width: 40px;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
   padding: 0;
+  border-color: color-mix(in srgb, var(--yellow) 54%, var(--line));
+  background: linear-gradient(135deg, var(--yellow-soft), var(--surface));
+  box-shadow: var(--soft-shadow);
 }
 
 .theme-icon {
-  width: 15px;
-  height: 15px;
+  position: relative;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: var(--yellow);
-  box-shadow: inset -4px -4px 0 rgba(255, 255, 255, 0.46);
+  box-shadow: 0 0 0 4px rgba(255, 193, 14, 0.18);
+}
+
+.theme-icon::before,
+.theme-icon::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 193, 14, 0.44);
+}
+
+.theme-icon::after {
+  inset: 4px -2px 4px 10px;
+  border: 0;
+  background: transparent;
 }
 
 body[data-theme="dark"] .theme-icon {
   background: var(--blue);
-  box-shadow: inset 5px -3px 0 var(--surface);
+  box-shadow: inset 6px -3px 0 var(--surface), 0 0 0 4px rgba(137, 209, 255, 0.16);
+}
+
+body[data-theme="dark"] .theme-toggle {
+  border-color: color-mix(in srgb, var(--blue) 48%, var(--line));
+  background: linear-gradient(135deg, var(--surface-soft), var(--surface));
+}
+
+body[data-theme="dark"] .theme-icon::before,
+body[data-theme="dark"] .theme-icon::after {
+  display: none;
 }
 
 main {
@@ -1396,11 +1427,15 @@ h1 {
   }
 
   .topic-switcher {
-    border-radius: 28px;
+    width: 100%;
+    border-radius: 24px;
     justify-content: flex-start;
     overflow-x: auto;
     flex-wrap: nowrap;
-    padding: 7px;
+    gap: 8px;
+    padding: 8px;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
 
@@ -1409,11 +1444,12 @@ h1 {
   }
 
   .nav-item {
-    flex: 0 0 auto;
-    min-height: 38px;
-    padding: 0 13px;
-    font-size: 13px;
+    flex: 0 0 max-content;
+    min-height: 42px;
+    padding: 0 16px;
+    font-size: 14px;
     white-space: nowrap;
+    scroll-snap-align: start;
   }
 
   .progress-strip {
@@ -1518,12 +1554,19 @@ h1 {
 
 @media (max-width: 420px) {
   .top-nav {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr auto;
+    align-items: center;
   }
 
   .nav-actions {
-    justify-content: flex-start;
-    width: 100%;
+    justify-content: flex-end;
+    width: auto;
+  }
+
+  .top-nav .secondary-link,
+  .top-nav .primary-link,
+  .top-nav .plain-btn {
+    display: none;
   }
 
   .brand span:last-child {
