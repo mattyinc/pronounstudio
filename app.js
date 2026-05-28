@@ -1179,6 +1179,7 @@ const questionTypes = ["MCQ", "Spanish to English", "English to Spanish", "Corre
 const genericDistractors = ["Lo veo.", "Le mandé un mensaje.", "Se lo dije.", "Me levanto temprano.", "Te lo voy a mandar.", "Quiero que lo hagas."];
 const courseLanguages = window.courseLanguages || { en: { name: "English", label: "Language" } };
 const languageFlags = { en: "🇺🇸", hi: "🇮🇳", ta: "🇮🇳", bn: "🇧🇩", am: "🇪🇹" };
+const languageCodes = { en: "EN", hi: "HI", ta: "TA", bn: "BN", am: "AM" };
 const fullCourses = window.fullCourses || {};
 const staticCopy = {
   en: {
@@ -1767,9 +1768,15 @@ function applyCourseLanguage() {
   const control = els.courseLanguage?.closest(".language-control");
   const label = control?.querySelector(".language-label");
   const flag = control?.querySelector("[data-language-flag]");
+  els.courseLanguage?.querySelectorAll("option").forEach((option) => {
+    const code = languageCodes[option.value] || option.value.toUpperCase();
+    option.textContent = code;
+    option.title = courseLanguages[option.value]?.name || code;
+  });
   if (label) label.textContent = courseLanguages[language]?.label || "Language";
   if (flag) flag.textContent = languageFlags[language] || languageFlags.en;
   if (flag) flag.dataset.languageCode = language;
+  if (control) control.title = `Course language: ${courseLanguages[language]?.name || languageCodes[language] || language}`;
   document.documentElement.lang = language === "en" ? "en" : language;
   document.body.dataset.courseLanguage = language;
   localStorage.setItem("courseLanguage", language);
