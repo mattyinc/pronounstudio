@@ -1849,16 +1849,21 @@ function translateStaticCopy(copy) {
 
 function applyScriptFonts() {
   const amharicPattern = /[\u1200-\u137f\u1380-\u139f\u2d80-\u2ddf\uab00-\uab2f]/;
-  const amharicRunPattern = /([\u1200-\u137f\u1380-\u139f\u2d80-\u2ddf\uab00-\uab2f]+)/g;
-  document.querySelectorAll("[data-script='am']").forEach((node) => {
+  const latinPattern = /[A-Za-zÀ-ÖØ-öø-ÿ]/;
+  const mixedScriptPattern = /([\u1200-\u137f\u1380-\u139f\u2d80-\u2ddf\uab00-\uab2f]+|[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ'’.-]*)/g;
+  const isAmharicMode = getCourseLanguage() === "am";
+
+  document.querySelectorAll("[data-script='am'], [data-script='latin']").forEach((node) => {
     node.replaceWith(document.createTextNode(node.textContent || ""));
   });
+  if (!isAmharicMode) return;
 
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
     acceptNode(node) {
       const parent = node.parentElement;
       if (!parent || parent.closest("script, style, select, option, textarea")) return NodeFilter.FILTER_REJECT;
-      if (!amharicPattern.test(node.nodeValue || "")) return NodeFilter.FILTER_REJECT;
+      const value = node.nodeValue || "";
+      if (!amharicPattern.test(value) && !latinPattern.test(value)) return NodeFilter.FILTER_REJECT;
       return NodeFilter.FILTER_ACCEPT;
     },
   });
@@ -1867,12 +1872,18 @@ function applyScriptFonts() {
 
   textNodes.forEach((node) => {
     const fragment = document.createDocumentFragment();
-    (node.nodeValue || "").split(amharicRunPattern).forEach((part) => {
+    (node.nodeValue || "").split(mixedScriptPattern).forEach((part) => {
       if (!part) return;
       if (amharicPattern.test(part)) {
         const span = document.createElement("span");
         span.className = "amharic-text";
         span.dataset.script = "am";
+        span.textContent = part;
+        fragment.appendChild(span);
+      } else if (latinPattern.test(part)) {
+        const span = document.createElement("span");
+        span.className = "latin-text";
+        span.dataset.script = "latin";
         span.textContent = part;
         fragment.appendChild(span);
       } else {

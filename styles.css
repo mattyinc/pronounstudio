@@ -135,6 +135,12 @@ a {
 
 .amharic-text {
   font-family: "HH Lemd Mono", var(--body-font);
+  unicode-bidi: isolate;
+}
+
+.latin-text {
+  font-family: var(--body-font);
+  unicode-bidi: isolate;
 }
 
 h1 .amharic-text,
@@ -144,6 +150,20 @@ h3 .amharic-text,
 .language-bridge h3 .amharic-text {
   font-family: "Benaiah", var(--display-font);
   font-weight: 400;
+}
+
+h1 .latin-text,
+h2 .latin-text,
+h3 .latin-text,
+.brand .latin-text,
+.language-bridge h3 .latin-text {
+  font-family: var(--display-font);
+}
+
+.google-auth-button .latin-text,
+button .latin-text,
+a .latin-text {
+  font-family: inherit;
 }
 
 .top-nav {
