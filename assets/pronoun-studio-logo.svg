@@ -1,23 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 96" role="img" aria-labelledby="title">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 150" role="img" aria-labelledby="title">
   <title id="title">Pronoun Studio logo</title>
   <defs>
-    <linearGradient id="pink" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="psPink" x1="24" y1="40" x2="104" y2="128" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ff4b91"/>
-      <stop offset="1" stop-color="#ec2147"/>
+      <stop offset="1" stop-color="#f72b70"/>
     </linearGradient>
-    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="psPurple" x1="78" y1="22" x2="163" y2="134" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#8847ff"/>
-      <stop offset="1" stop-color="#5b34e8"/>
+      <stop offset="1" stop-color="#7439f4"/>
     </linearGradient>
-    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#11a8ff"/>
-      <stop offset="1" stop-color="#007aff"/>
+    <linearGradient id="psBlue" x1="148" y1="40" x2="218" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0da8ff"/>
+      <stop offset="1" stop-color="#088bed"/>
     </linearGradient>
   </defs>
-  <circle cx="48" cy="27" r="13" fill="url(#pink)"/>
-  <circle cx="80" cy="20" r="16" fill="url(#purple)"/>
-  <circle cx="112" cy="27" r="13" fill="url(#blue)"/>
-  <path d="M14 84c0-23 17-44 42-44s42 21 42 44c0 3-2 5-5 4-27-8-47-8-74 0-3 1-5-1-5-4Z" fill="url(#pink)"/>
-  <path d="M48 84c0-28 16-52 44-52s44 24 44 52c0 4-3 6-7 5-25-8-49-8-74 0-4 1-7-1-7-5Z" fill="url(#purple)" opacity=".95"/>
-  <path d="M88 84c0-23 17-44 42-44s42 21 42 44c0 3-2 5-5 4-27-8-47-8-74 0-3 1-5-1-5-4Z" fill="url(#blue)"/>
+
+  <circle cx="70" cy="43" r="16.5" fill="url(#psPink)"/>
+  <circle cx="120" cy="28" r="20.5" fill="url(#psPurple)"/>
+  <circle cx="170" cy="43" r="16.5" fill="url(#psBlue)"/>
+
+  <path d="M28 124c0-35 23-61 55-61 31 0 54 26 54 61 0 3.4-2.8 5.8-6.1 5.1-33.3-7-62.5-7-95.8 0-3.3.7-6.1-1.7-6.1-5.1Z" fill="url(#psPink)"/>
+  <path d="M75 124c0-43 26-75 65-75s65 32 65 75c0 3.8-3.4 6.4-7.1 5.4-39-10.3-76.8-10.3-115.8 0-3.7 1-7.1-1.6-7.1-5.4Z" fill="url(#psPurple)" opacity=".97"/>
+  <path d="M127 124c0-35 23-61 55-61 31 0 54 26 54 61 0 3.4-2.8 5.8-6.1 5.1-33.3-7-62.5-7-95.8 0-3.3.7-6.1-1.7-6.1-5.1Z" fill="url(#psBlue)"/>
 </svg>
