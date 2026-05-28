@@ -1849,10 +1849,37 @@ function translateStaticCopy(copy) {
 
 function applyScriptFonts() {
   const amharicPattern = /[\u1200-\u137f\u1380-\u139f\u2d80-\u2ddf\uab00-\uab2f]/;
-  document.querySelectorAll(".amharic-text").forEach((node) => node.classList.remove("amharic-text"));
-  document.querySelectorAll("body *").forEach((node) => {
-    if (node.children.length) return;
-    if (amharicPattern.test(node.textContent || "")) node.classList.add("amharic-text");
+  const amharicRunPattern = /([\u1200-\u137f\u1380-\u139f\u2d80-\u2ddf\uab00-\uab2f]+)/g;
+  document.querySelectorAll("[data-script='am']").forEach((node) => {
+    node.replaceWith(document.createTextNode(node.textContent || ""));
+  });
+
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      const parent = node.parentElement;
+      if (!parent || parent.closest("script, style, select, option, textarea")) return NodeFilter.FILTER_REJECT;
+      if (!amharicPattern.test(node.nodeValue || "")) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    },
+  });
+  const textNodes = [];
+  while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+  textNodes.forEach((node) => {
+    const fragment = document.createDocumentFragment();
+    (node.nodeValue || "").split(amharicRunPattern).forEach((part) => {
+      if (!part) return;
+      if (amharicPattern.test(part)) {
+        const span = document.createElement("span");
+        span.className = "amharic-text";
+        span.dataset.script = "am";
+        span.textContent = part;
+        fragment.appendChild(span);
+      } else {
+        fragment.appendChild(document.createTextNode(part));
+      }
+    });
+    node.replaceWith(fragment);
   });
 }
 

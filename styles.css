@@ -137,11 +137,11 @@ a {
   font-family: "HH Lemd Mono", var(--body-font);
 }
 
-h1.amharic-text,
-h2.amharic-text,
-h3.amharic-text,
+h1 .amharic-text,
+h2 .amharic-text,
+h3 .amharic-text,
 .brand .amharic-text,
-.language-bridge h3.amharic-text {
+.language-bridge h3 .amharic-text {
   font-family: "Benaiah", var(--display-font);
   font-weight: 400;
 }
