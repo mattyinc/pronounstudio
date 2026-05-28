@@ -352,8 +352,11 @@ a .latin-text {
 
 .language-flag[data-language-code="en"]::before {
   background:
-    linear-gradient(90deg, #2b4c9b 0 42%, transparent 42%),
-    repeating-linear-gradient(180deg, #bf1e2e 0 2px, #ffffff 2px 4px);
+    linear-gradient(32deg, transparent 0 40%, #ffffff 40% 46%, #cf142b 46% 51%, #ffffff 51% 57%, transparent 57%),
+    linear-gradient(148deg, transparent 0 40%, #ffffff 40% 46%, #cf142b 46% 51%, #ffffff 51% 57%, transparent 57%),
+    linear-gradient(90deg, transparent 0 40%, #ffffff 40% 45%, #cf142b 45% 55%, #ffffff 55% 60%, transparent 60%),
+    linear-gradient(180deg, transparent 0 38%, #ffffff 38% 44%, #cf142b 44% 56%, #ffffff 56% 62%, transparent 62%),
+    #012169;
 }
 
 .language-flag[data-language-code="hi"]::before,
