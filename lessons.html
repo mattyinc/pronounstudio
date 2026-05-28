@@ -25,7 +25,10 @@
         <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
           <span class="theme-icon" aria-hidden="true"></span>
         </button>
-        <button id="signInBtn" class="plain-btn auth-btn" type="button">Sign in</button>
+        <button id="signInBtn" class="google-btn" type="button">
+          <span class="google-mark" aria-hidden="true"></span>
+          <span>Sign in with Google</span>
+        </button>
         <span id="authStatus" class="auth-status">Local progress</span>
         <button id="signOutBtn" class="plain-btn auth-btn hidden" type="button">Sign out</button>
         <button id="resetProgress" class="plain-btn" type="button">Reset</button>
@@ -48,6 +51,14 @@
         <button class="nav-item" data-topic="verbs"><span>05</span> Reflexive verbs</button>
         <button class="nav-item" data-topic="tenses"><span>06</span> Tenses</button>
       </nav>
+
+      <section class="save-notice compact" data-auth-notice>
+        <div>
+          <p class="eyebrow">Local mode</p>
+          <h2>Your lessons work now.</h2>
+        </div>
+        <p>Sign in with Google when you want progress saved to the cloud. Without sign-in, this browser keeps progress locally.</p>
+      </section>
 
       <section class="progress-strip" aria-label="Learning progress">
         <div>

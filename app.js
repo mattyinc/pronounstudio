@@ -1060,6 +1060,7 @@ const els = {
   signInBtn: document.getElementById("signInBtn"),
   signOutBtn: document.getElementById("signOutBtn"),
   authStatus: document.getElementById("authStatus"),
+  authNotices: document.querySelectorAll("[data-auth-notice]"),
 };
 
 function setTheme(theme) {
@@ -1108,7 +1109,11 @@ function renderAuth() {
   const isSignedIn = Boolean(currentUser);
   els.signInBtn.classList.toggle("hidden", isSignedIn);
   els.signOutBtn.classList.toggle("hidden", !isSignedIn);
-  els.authStatus.textContent = isSignedIn ? currentUser.email || "Cloud sync on" : "Local progress";
+  els.authStatus.textContent = isSignedIn ? "Cloud sync on" : "Local progress only";
+  els.authStatus.title = isSignedIn ? currentUser.email || "Signed in" : "Sign in to save progress across devices";
+  els.authNotices.forEach((notice) => {
+    notice.classList.toggle("signed-in", isSignedIn);
+  });
 }
 
 async function signInWithGoogle() {

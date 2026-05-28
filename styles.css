@@ -263,6 +263,96 @@ a {
   font-size: 13px;
 }
 
+.google-btn {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid color-mix(in srgb, var(--line) 72%, var(--text));
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0 16px 0 12px;
+  box-shadow: var(--soft-shadow);
+}
+
+.google-btn:hover {
+  transform: translateY(-1px);
+}
+
+.google-mark {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background:
+    conic-gradient(from -40deg, #4285f4 0 25%, #34a853 0 50%, #fbbc05 0 75%, #ea4335 0 100%);
+}
+
+.google-mark::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: var(--surface);
+}
+
+.google-mark::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 8px;
+  width: 10px;
+  height: 4px;
+  background: #4285f4;
+  border-radius: 0 999px 999px 0;
+}
+
+.save-notice {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 28px;
+  align-items: center;
+  margin: -54px 0 104px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 34px;
+  background: linear-gradient(135deg, var(--surface), var(--yellow-soft));
+  box-shadow: var(--soft-shadow);
+}
+
+.save-notice.compact {
+  margin: 28px 0 48px;
+}
+
+.save-notice h2 {
+  margin-top: 8px;
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.save-notice > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.save-notice.signed-in {
+  background: linear-gradient(135deg, var(--surface), var(--green-soft));
+}
+
+.save-notice.signed-in .eyebrow {
+  color: var(--green);
+}
+
+.save-notice.signed-in h2::after {
+  content: " Saved to cloud";
+}
+
 .theme-icon {
   position: relative;
   width: 18px;
@@ -1338,6 +1428,7 @@ h1 {
   .nav-actions,
   .hero-actions,
   .exam-controls,
+  .save-notice,
   .quiz-stats,
   .question-meta {
     flex-wrap: wrap;
@@ -1355,7 +1446,8 @@ h1 {
 
   .primary-link,
   .secondary-link,
-  .plain-btn {
+  .plain-btn,
+  .google-btn {
     min-height: 38px;
     padding: 0 14px;
     font-size: 13px;
@@ -1479,6 +1571,16 @@ h1 {
     padding: 20px;
   }
 
+  .save-notice {
+    margin: 20px 0 58px;
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .save-notice h2 {
+    font-size: 24px;
+  }
+
   .value-row {
     gap: 12px;
     margin-bottom: 74px;
@@ -1586,8 +1688,15 @@ h1 {
   .top-nav .secondary-link,
   .top-nav .primary-link,
   .top-nav .plain-btn:not(.auth-btn),
-  .auth-status {
+  .auth-status,
+  .google-btn span:last-child {
     display: none;
+  }
+
+  .google-btn {
+    width: 44px;
+    min-width: 44px;
+    padding: 0;
   }
 
   .brand span:last-child {

@@ -25,7 +25,10 @@
         <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
           <span class="theme-icon" aria-hidden="true"></span>
         </button>
-        <button id="signInBtn" class="plain-btn auth-btn" type="button">Sign in</button>
+        <button id="signInBtn" class="google-btn" type="button">
+          <span class="google-mark" aria-hidden="true"></span>
+          <span>Sign in with Google</span>
+        </button>
         <span id="authStatus" class="auth-status">Local progress</span>
         <button id="signOutBtn" class="plain-btn auth-btn hidden" type="button">Sign out</button>
         <button id="resetProgress" class="plain-btn" type="button">Reset</button>
@@ -85,6 +88,14 @@
           <h2>Progress memory</h2>
           <p>Your streak, attempts, theme, and selected exam persist locally as you move between pages.</p>
         </article>
+      </section>
+
+      <section class="save-notice" data-auth-notice>
+        <div>
+          <p class="eyebrow">Progress saving</p>
+          <h2>Learn freely. Sign in only when you want cloud progress.</h2>
+        </div>
+        <p>You can use every lesson and exam without an account. Sign in with Google if you want your streak, exam level, theme, and progress saved across devices.</p>
       </section>
     </main>
 

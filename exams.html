@@ -25,7 +25,10 @@
         <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
           <span class="theme-icon" aria-hidden="true"></span>
         </button>
-        <button id="signInBtn" class="plain-btn auth-btn" type="button">Sign in</button>
+        <button id="signInBtn" class="google-btn" type="button">
+          <span class="google-mark" aria-hidden="true"></span>
+          <span>Sign in with Google</span>
+        </button>
         <span id="authStatus" class="auth-status">Local progress</span>
         <button id="signOutBtn" class="plain-btn auth-btn hidden" type="button">Sign out</button>
         <button id="resetProgress" class="plain-btn" type="button">Reset</button>
@@ -38,6 +41,14 @@
         <p class="eyebrow">Exam studio</p>
         <h1>Choose the exam you want to take.</h1>
         <p class="hero-text">Every topic has five levels and each level contains at least forty mixed questions.</p>
+      </section>
+
+      <section class="save-notice compact" data-auth-notice>
+        <div>
+          <p class="eyebrow">Cloud progress</p>
+          <h2>Want your scores saved?</h2>
+        </div>
+        <p>Exams work without login, but your cloud streak and progress only sync after signing in with Google.</p>
       </section>
 
       <section class="quiz-section standalone-quiz" id="quizPanel">
