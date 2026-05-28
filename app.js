@@ -1113,6 +1113,12 @@ function renderAuth() {
   els.authStatus.title = isSignedIn ? currentUser.email || "Signed in" : "Sign in to save progress across devices";
   els.authNotices.forEach((notice) => {
     notice.classList.toggle("signed-in", isSignedIn);
+    const body = notice.querySelector(":scope > p");
+    if (body) {
+      body.textContent = isSignedIn
+        ? "Cloud sync is active. Your streak, exam level, theme, and progress will be saved to your account."
+        : "You can use every lesson and exam without an account. Sign in with Google if you want your streak, exam level, theme, and progress saved across devices.";
+    }
   });
 }
 
