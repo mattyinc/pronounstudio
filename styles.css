@@ -1205,14 +1205,27 @@ h1 {
 
 @media (max-width: 980px) {
   .top-nav {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    padding: 16px 20px;
+    position: static;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    padding: 14px 20px;
   }
 
-  .desktop-links,
-  .nav-actions {
+  .desktop-links {
+    grid-column: 1 / -1;
     justify-content: flex-start;
+    gap: 18px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+
+  .desktop-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-actions {
+    justify-content: flex-end;
   }
 
   main {
@@ -1235,11 +1248,14 @@ h1 {
 
   .hero {
     min-height: auto;
-    padding: 66px 0 82px;
+    padding: 56px 0 72px;
   }
 
   .hero-visual {
-    min-height: 420px;
+    min-height: 360px;
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
   }
 
   .progress-strip {
@@ -1257,11 +1273,15 @@ h1 {
   .lesson-examples {
     margin-bottom: 104px;
   }
+
+  .reference-sheet {
+    order: -1;
+  }
 }
 
 @media (max-width: 620px) {
-  .desktop-links {
-    display: none;
+  main {
+    width: min(100% - 28px, 560px);
   }
 
   .nav-actions,
@@ -1273,37 +1293,268 @@ h1 {
   }
 
   .nav-actions {
-    width: 100%;
+    width: auto;
   }
 
   .primary-btn,
   .plain-btn,
   .theme-toggle {
-    flex: 1;
     justify-content: center;
   }
 
+  .primary-link,
+  .secondary-link,
+  .plain-btn {
+    min-height: 38px;
+    padding: 0 14px;
+    font-size: 13px;
+  }
+
   h1 {
+    font-size: 40px;
+    line-height: 1.04;
+  }
+
+  h2 {
+    line-height: 1.08;
+  }
+
+  .page-hero {
+    padding: 58px 0 34px;
+  }
+
+  .page-hero h1 {
     font-size: 42px;
   }
 
   .hero-text {
-    font-size: 17px;
+    font-size: 16px;
+    line-height: 1.62;
+  }
+
+  .hero {
+    gap: 26px;
+    padding: 44px 0 56px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+  }
+
+  .hero-actions a {
+    flex: 1;
+  }
+
+  .hero-visual {
+    min-height: 270px;
   }
 
   .shape-grid {
-    grid-auto-rows: 96px;
+    inset: 8px 8px 34px;
+    grid-auto-rows: 74px;
+    gap: 9px;
   }
 
   .tile {
-    border-radius: 26px;
+    border-radius: 20px;
+    font-size: 20px;
+  }
+
+  .tile-blue {
+    border-top-right-radius: 48px;
+  }
+
+  .tile-orange {
+    border-bottom-left-radius: 48px;
+  }
+
+  .tile-teal {
+    border-top-left-radius: 48px;
+  }
+
+  .tile-pink {
+    border-bottom-right-radius: 48px;
+  }
+
+  .stat-card {
+    min-width: 104px;
+    padding: 13px 15px;
+    border-radius: 20px;
+  }
+
+  .stat-card strong {
+    font-size: 24px;
+  }
+
+  .stat-one {
+    bottom: 18px;
+  }
+
+  .stat-two {
+    top: 0;
+    right: 0;
   }
 
   .topic-switcher {
     border-radius: 28px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 7px;
+    scrollbar-width: none;
+  }
+
+  .topic-switcher::-webkit-scrollbar {
+    display: none;
   }
 
   .nav-item {
-    flex: 1;
+    flex: 0 0 auto;
+    min-height: 38px;
+    padding: 0 13px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .progress-strip {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin: 28px auto 74px;
+    padding: 20px;
+  }
+
+  .value-row {
+    gap: 12px;
+    margin-bottom: 74px;
+  }
+
+  .value-row article,
+  .reference-sheet,
+  .deep-lesson-card,
+  .tense-lesson,
+  .example-card,
+  .question-card {
+    border-radius: 24px;
+    padding: 22px;
+  }
+
+  .lesson-stage {
+    gap: 36px;
+    margin-bottom: 80px;
+  }
+
+  .lesson-copy h2,
+  .quiz-intro h2,
+  .reference-sheet h2 {
+    font-size: 36px;
+  }
+
+  .summary {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .explanation-blocks {
+    gap: 22px;
+    margin-top: 34px;
+  }
+
+  .explanation {
+    padding-bottom: 24px;
+  }
+
+  .deep-lesson-card > p,
+  .explanation p,
+  .tense-use {
+    font-size: 15px;
+    line-height: 1.64;
+  }
+
+  .deep-example-list div {
+    gap: 7px;
+  }
+
+  .examples-list,
+  .tense-example-list,
+  .tense-guidance {
+    gap: 10px;
+  }
+
+  .tense-lesson-head {
+    gap: 12px;
+  }
+
+  .tense-lesson-head h3 {
+    font-size: 22px;
+  }
+
+  .quiz-section {
+    padding: 56px 0 86px;
+  }
+
+  .standalone-quiz {
+    padding-top: 28px;
+  }
+
+  .exam-controls {
+    align-items: stretch;
+  }
+
+  .exam-controls .secondary-link {
+    width: 100%;
+  }
+
+  .question-card h3 {
+    font-size: 25px;
+    line-height: 1.25;
+  }
+
+  .answer {
+    min-height: 54px;
+    padding: 14px 16px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .top-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-actions {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .brand span:last-child {
+    font-size: 17px;
+  }
+
+  h1,
+  .page-hero h1 {
+    font-size: 35px;
+  }
+
+  .hero-visual {
+    min-height: 238px;
+  }
+
+  .shape-grid {
+    grid-auto-rows: 64px;
+  }
+
+  .lesson-copy h2,
+  .quiz-intro h2,
+  .reference-sheet h2 {
+    font-size: 31px;
+  }
+
+  .value-row article,
+  .reference-sheet,
+  .deep-lesson-card,
+  .tense-lesson,
+  .example-card,
+  .question-card {
+    padding: 18px;
   }
 }
