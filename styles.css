@@ -143,11 +143,11 @@ a {
 
 .brand span:last-child {
   font-family: var(--display-font);
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .brand-mark {
-  width: 46px;
+  width: 54px;
   height: 34px;
   display: block;
   object-fit: contain;
