@@ -1551,6 +1551,7 @@ function applyCourseLanguage() {
   document.body.dataset.courseLanguage = language;
   localStorage.setItem("courseLanguage", language);
   translateStaticCopy(copy);
+  applyScriptFonts();
 }
 
 function setText(selector, value, index = 0) {
@@ -1620,6 +1621,15 @@ function translateStaticCopy(copy) {
     setText("#startExam", copy.startExam);
     setText("#nextQuestion", copy.nextQuestion);
   }
+}
+
+function applyScriptFonts() {
+  const amharicPattern = /[\u1200-\u137f\u1380-\u139f\u2d80-\u2ddf\uab00-\uab2f]/;
+  document.querySelectorAll(".amharic-text").forEach((node) => node.classList.remove("amharic-text"));
+  document.querySelectorAll("body *").forEach((node) => {
+    if (node.children.length) return;
+    if (amharicPattern.test(node.textContent || "")) node.classList.add("amharic-text");
+  });
 }
 
 function renderLanguageBridge(topicKey) {
@@ -1741,6 +1751,7 @@ function renderTopic(topicKey) {
     .map(([pronoun, meaning]) => `<div class="pronoun-row"><span>${pronoun}</span><strong>${meaning}</strong></div>`)
     .join("");
 
+  applyScriptFonts();
 }
 
 function startExam() {
